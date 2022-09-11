@@ -1,3 +1,4 @@
-import $1 from './$1.astro'
+// @ts-ignore
+import PostExcerpt from './PostExcerpt.astro'
 
-export default $1
+export default PostExcerpt
