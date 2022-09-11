@@ -1,0 +1,29 @@
+{
+	"name": "@igor.dvlpr/astro-$1",
+	"version": "1.0.0",
+	"description": "$2",
+	"main": "index.js",
+	"module": "index.js",
+	"type": "module",
+	"types": "./index.d.ts",
+	"files": [
+		"/",
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/igorskyflyer/$3.git"
+	},
+	"keywords": [
+		"astro",
+		"igorskyflyer",
+		"igor.dvlpr"
+	],
+	"author": "Igor Dimitrijević <igor.dvlpr@gmail.com> (https://github.com/igorskyflyer)",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/igorskyflyer/$3/issues"
+	},
+	"homepage": "https://github.com/igorskyflyer/$3#readme",
+	"devDependencies": {},
+	"dependencies": {}
+}
