@@ -32,5 +32,8 @@
 	"homepage": "https://github.com/igorskyflyer/npm-astro-post-excerpt#readme",
 	"devDependencies": {
 		"astro": "^1.2.1"
+	},
+	"peerDependencies": {
+		"astro": "^1.2.1"
 	}
 }
