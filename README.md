@@ -8,7 +8,7 @@
 <p align="center">
 <img src="https://raw.githubusercontent.com/igorskyflyer/npm-astro-post-excerpt/main/assets/demo.png" alt="Generated post excerpt">
 <br>
-<sub>&lt;PostExcerpt /&gt; component generated excerpt</sub>
+<sub><code>&lt;PostExcerpt /&gt;</code> component generated excerpt</sub>
 </p>
 
 <br>
@@ -34,7 +34,7 @@ const { post } = Astro.props
 
 <article>
 // other markup
-  <p class="post-description">
+  <p class="post-excerpt">
     <Excerpt post={post} words={20} addEllipsis={false} />
   </p>
 // other markup
