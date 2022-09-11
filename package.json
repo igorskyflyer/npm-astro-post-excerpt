@@ -5,9 +5,9 @@
 	"main": "index.js",
 	"module": "index.js",
 	"type": "module",
-	"files": [
-		"/"
-	],
+	"scripts": {
+		"pub": "npm publish --access public"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/igorskyflyer/npm-astro-post-excerpt.git"
