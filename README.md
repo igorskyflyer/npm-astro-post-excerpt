@@ -3,6 +3,15 @@
 ⭐ An Astro component that renders post excerpts for your Astro blog - directly from your Markdown files! 🚀
 
 <br>
+<br>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/igorskyflyer/npm-astro-post-excerpt/main/assets/demo.png" alt="Generated post excerpt">
+<br>
+<sub>&lt;PostExcerpt /&gt; component generated excerpt</sub>
+</p>
+
+<br>
 
 ## 🕵🏼‍♂️ Usage
 
@@ -26,9 +35,7 @@ const { post } = Astro.props
 <article>
 	// other markup
   <p class="post-description">
-    <Excerpt post={post}
-					 words={20}
-					 addEllipsis={true} />
+    <Excerpt post={post} words={20} addEllipsis={false} />
   </p>
 	// other markup
 </article>
