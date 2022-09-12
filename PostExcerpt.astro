@@ -24,8 +24,7 @@ let { post, words = 40, maxLength = 0, addEllipsis = true } = Astro.props
 let postText = ''
 
 if (!post || typeof post['compiledContent'] !== 'function') {
-  console.error('The required prop post is not valid, aborting now.')
-  return
+	throw new TypeError('The required prop post is not valid, aborting now.')
 }
 
 if (typeof words !== 'number' || words < 0) {
