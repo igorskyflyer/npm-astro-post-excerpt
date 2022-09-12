@@ -2,8 +2,9 @@
 	"name": "@igor.dvlpr/astro-post-excerpt",
 	"version": "1.0.1",
 	"description": "⭐ An Astro component that renders post excerpts for your Astro blog - directly from your Markdown files! 🚀",
-	"main": "index.js",
-	"module": "index.js",
+	"main": "./index.js",
+	"module": "./index.js",
+	"exports": "./index.js",
 	"type": "module",
 	"scripts": {
 		"pub": "npm publish --access public"
@@ -31,7 +32,7 @@
 	},
 	"homepage": "https://github.com/igorskyflyer/npm-astro-post-excerpt#readme",
 	"devDependencies": {
-		"astro": "^1.2.1"
+		"astro": "^1.2.2"
 	},
 	"peerDependencies": {
 		"astro": "^1.2.1"
