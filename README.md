@@ -25,7 +25,7 @@ then import it into your project:
 
 <br>
 
-`PreviewBlog.astro`
+`PostPreview.astro`
 
 ```jsx
 import PostExcerpt from '@igor.dvlpr/astro-post-excerpt'
@@ -35,11 +35,25 @@ const { post } = Astro.props
 <article>
 // other markup
   <p class="post-excerpt">
-    <Excerpt post={post} words={20} addEllipsis={false} />
+    <PostExcerpt post={post} words={20} addEllipsis={false} />
   </p>
 // other markup
 </article>
 ```
+
+<br>
+
+> **NOTE**: if you get _"unknown file extension \".astro\" for @igor.dvlpr/astro-post-excerpt"_, you'll need to update your `astro.config.mjs` file and add the following property:
+
+```js
+vite: {
+    ssr: {
+      noExternal: ['astro', '@igor.dvlpr/astro-post-excerpt'],
+    },
+  }
+```
+
+See [#3820](https://github.com/withastro/astro/issues/3820) for more information.
 
 <br>
 
