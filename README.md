@@ -43,7 +43,7 @@ const { post } = Astro.props
 
 <br>
 
-> **NOTE**: if you get _"unknown file extension \".astro\" for @igor.dvlpr/astro-post-excerpt"_, you'll need to update your `astro.config.mjs` file and add the following property:
+> **NOTE**: if you get a build error _"unknown file extension \".astro\" for @igor.dvlpr/astro-post-excerpt"_, you'll need to update your `astro.config.mjs` file and add the following property:
 
 ```js
 vite: {
