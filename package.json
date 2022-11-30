@@ -39,6 +39,6 @@
 		"astro": "^1.6.12"
 	},
 	"peerDependencies": {
-		"astro": "^1.5.0"
+		"astro": "^1.6.12"
 	}
 }
