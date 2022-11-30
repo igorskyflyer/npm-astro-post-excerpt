@@ -14,6 +14,8 @@
 		"url": "git+https://github.com/igorskyflyer/npm-astro-post-excerpt.git"
 	},
 	"keywords": [
+		"astro-component",
+		"with-astro",
 		"astro",
 		"post",
 		"excerpt",
