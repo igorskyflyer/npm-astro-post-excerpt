@@ -59,8 +59,6 @@ See [#3820](https://github.com/withastro/astro/issues/3820) for more information
 
 ## 🤹🏼‍♂️ Options
 
-<br>
-
 ### post
 
 ```ts
@@ -69,7 +67,7 @@ post: MarkdownInstance<Record<string, any>>
 
 **required** , represents the post whose excerpt you want to generate and render, usually obtained via [`Astro.glob()`](https://docs.astro.build/en/reference/api-reference/#astroglob), thus, you should insert this component inside your posts loop, see [`Astro API`](https://docs.astro.build/en/reference/api-reference/) for more info.
 
-If this prop is not supplied or not valid, the component will render an empty string.
+If this prop is not supplied or not valid, the component will throw an error.
 
 <br>
 
@@ -107,6 +105,35 @@ If this prop is not supplied or not valid, a warning will be output to the conso
 addEllipsis?: boolean
 ```
 
-**optional**, controls whether horizontal ellipsis "…" should be appended to the post excerpt. Defaults to **true**.
+**optional**, controls whether an ellipsis should be appended to the post excerpt. Defaults to **true**.
 
-If this prop is not supplied or not valid, a warning will be output to the console.
+If this prop is not valid, a warning will be output to the console.
+
+ <br>
+
+### smartEllipsis
+
+```ts
+smartEllipsis?: boolean
+```
+
+**optional**, controls whether the appended ellipsis should be aware of how the excerpt ends, i.e. if the excerpt ends with a punctuation symbol the ellipsis won't be appended. Defaults to **true**.
+
+**Note**: punctuation symbols that this component is aware are:
+- `"."`,
+- `","`,
+- `"?"`,
+- `"!"`,
+- `";"`.
+
+If this prop is not valid, a warning will be output to the console.
+
+ <br>
+
+### ellipsis
+
+```ts
+ellipsis?: string
+```
+
+**optional**, controls the ellipsis string that should be appended to the post excerpt. Defaults to **"…"**.
