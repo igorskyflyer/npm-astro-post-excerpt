@@ -19,7 +19,7 @@
 
 ## 1.0.2 - 12-Sep-2022
 
-- throw an error instead of logging it when `post` is missing,
+- throw an error instead of logging it when required prop [`post`](https://github.com/igorskyflyer/npm-astro-post-excerpt#post) is missing or not valid,
 - maintenance
 
 <br>
