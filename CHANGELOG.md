@@ -4,7 +4,7 @@
 
 <br>
 
-## 1.1.0 - 01-Dec-2022
+## 1.1.0 - 01-Dec-2022 (WiP)
 
 - maintenance
 
@@ -13,7 +13,7 @@
 ## 1.0.3 - 13-Oct-2022
 
 - maintenance,
-- add testing environment
+- added testing environment
 
 <br>
 
@@ -26,7 +26,7 @@
 
 ## 1.0.1 - 12-Sep-2022
 
-- add an explanation how to fix a common Astro build error caused by Vite,
+- added an explanation how to fix a common Astro build error caused by Vite,
 - maintenance
 
 <br>
