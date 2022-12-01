@@ -1,6 +1,6 @@
 ## 🤹🏼‍♂️ Changelog
 
-### for [@igor.dvlpr/astro-post-excerpt](https://www.npmjs.com/package/@igor.dvlpr/astro-post-excerpt)
+### of [@igor.dvlpr/astro-post-excerpt](https://www.npmjs.com/package/@igor.dvlpr/astro-post-excerpt)
 
 <br>
 
