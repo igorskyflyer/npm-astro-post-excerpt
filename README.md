@@ -119,7 +119,7 @@ smartEllipsis?: boolean
 
 **optional**, controls whether the appended ellipsis should be aware of how the excerpt ends, i.e. if the excerpt ends with a punctuation symbol the ellipsis won't be appended. Defaults to **true**.
 
-**Note**: punctuation symbols that this component is aware are:
+**Note**: punctuation symbols that this component is aware of are:
 - `"."`,
 - `","`,
 - `"?"`,
@@ -137,3 +137,5 @@ ellipsis?: string
 ```
 
 **optional**, controls the ellipsis string that should be appended to the post excerpt. Defaults to **"…"**.
+
+If this prop is not valid, a warning will be output to the console.
