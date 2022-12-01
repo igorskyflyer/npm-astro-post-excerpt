@@ -6,6 +6,7 @@
 
 ## 1.1.0 - 01-Dec-2022 (WiP)
 
+- added smartEllipsis,
 - maintenance
 
 <br>
