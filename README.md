@@ -33,11 +33,11 @@ import PostExcerpt from '@igor.dvlpr/astro-post-excerpt'
 const { post } = Astro.props
 
 <article>
-// other markup
+{ /* other markup */ }
   <p class="post-excerpt">
     <PostExcerpt post={post} words={20} addEllipsis={false} />
   </p>
-// other markup
+{ /* other markup */ }
 </article>
 ```
 
