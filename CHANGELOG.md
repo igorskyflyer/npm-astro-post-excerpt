@@ -4,10 +4,13 @@
 
 <br>
 
-## 1.1.0 - 01-Dec-2022 (WiP)
+## 1.1.0 - 01-Dec-2022
 
 - added smartEllipsis,
 - added custom ellipsis support,
+- use native _\<post\>_`.rawContent()` function,
+- updated JSDocs,
+- refactored code,
 - maintenance
 
 <br>
