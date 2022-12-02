@@ -1,6 +1,12 @@
-# Post Excerpt component for `Astro`
+<p align="center">
+  <img src="https://github.com/igorskyflyer/npm-astro-post-excerpt/raw/main/assets/post-excerpt-for-astro.png" alt="Logo of Post excerpt for Astro component">
+</p>
 
+<h1 align="center">Post Excerpt component for 🚀 Astro</h1>
+
+<p align="center">
 ⭐ An Astro component that renders post excerpts for your Astro blog - directly from your Markdown files! 🚀
+</p>
 
 <br>
 <br>
