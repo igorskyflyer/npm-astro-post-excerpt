@@ -61,7 +61,7 @@ if (typeof ellipsis !== 'string' || ellipsis.length < 1) {
   console.warn('The optional prop ellipsis is not valid, defaulting to "…".')
 }
 
-postExcerpt = post.rawContent()
+postExcerpt = post.rawContent().trim()
 
 if (words > 0) {
   postExcerpt = postExcerpt.split(' ').slice(0, words).join(' ')
