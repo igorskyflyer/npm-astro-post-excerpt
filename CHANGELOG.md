@@ -4,8 +4,9 @@
 
 <br>
 
-## 1.1.0 - 01-Dec-2022
+## 1.1.0 - 02-Dec-2022
 
+- fixed [`maxLength`](https://github.com/igorskyflyer/npm-astro-post-excerpt#maxlength) issue ([#10](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/10)),
 - added smartEllipsis,
 - added custom ellipsis support,
 - use native _\<post\>_`.rawContent()` function,
