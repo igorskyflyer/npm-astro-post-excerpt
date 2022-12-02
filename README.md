@@ -5,7 +5,7 @@
 <h1 align="center">Post Excerpt component for 🚀 Astro</h1>
 
 <p align="center">
-⭐ An Astro component that renders post excerpts for your Astro blog - directly from your Markdown files! 🚀
+⭐ An Astro component that renders post excerpts for your Astro blog - directly from your Markdown files! 💎
 </p>
 
 <br>
