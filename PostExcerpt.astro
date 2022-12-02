@@ -3,7 +3,7 @@ import { MarkdownInstance } from 'astro'
 
 export interface Props {
   /**
-   * The post whose excerpt you want to generate and render. If this prop is not supplied or not valid, the component will render an empty string.
+   * The post whose excerpt you want to generate and render. If this prop is not supplied or not valid, the component will throw an error.
    */
   post: MarkdownInstance<Record<string, any>>
   /**
@@ -15,16 +15,25 @@ export interface Props {
    */
   maxLength?: number
   /**
-   * Controls whether horizontal ellipsis "…" should be appended to the post excerpt. Defaults to **true**.
+   * Controls whether an ellipsis ("…" is the default, you can configure it) should be appended to the post excerpt. Defaults to **true**.
    */
   addEllipsis?: boolean
+  /**
+   * Controls whether the appended ellipsis should be aware of how the excerpt ends, i.e. if the excerpt ends with a punctuation symbol the ellipsis won't be appended. Defaults to **true**.
+   */
+  smartEllipsis?: boolean
+  /**
+   * Controls the ellipsis string that should be appended to the post excerpt. Defaults to **"…"**.
+   */
+  ellipsis?: string
 }
 
-let { post, words = 40, maxLength = 0, addEllipsis = true } = Astro.props
-let postText = ''
+const punctuationSymbols = ['.', ',', '?', '!', ';']
+let { post, words = 40, maxLength = 0, addEllipsis = true, smartEllipsis = true, ellipsis = '…' } = Astro.props
+let postExcerpt = ''
 
 if (!post || typeof post['compiledContent'] !== 'function') {
-	throw new TypeError('The required prop post is not valid, aborting now.')
+  throw new TypeError('The required prop post is not valid, aborting now.')
 }
 
 if (typeof words !== 'number' || words < 0) {
@@ -42,21 +51,41 @@ if (typeof addEllipsis !== 'boolean') {
   console.warn('The optional prop addEllipsis is not valid, defaulting to true.')
 }
 
-const postHtml = post.compiledContent()
+if (typeof smartEllipsis !== 'boolean') {
+  smartEllipsis = true
+  console.warn('The optional prop smartEllipsis is not valid, defaulting to true.')
+}
 
-postText = postHtml.replace(/<[^>]*>?/gm, '')
+if (typeof ellipsis !== 'string' || ellipsis.length < 1) {
+  ellipsis = '…'
+  console.warn('The optional prop ellipsis is not valid, defaulting to "…".')
+}
+
+postExcerpt = post.rawContent()
 
 if (words > 0) {
-  postText = postText.split(' ').slice(0, words).join(' ')
+  postExcerpt = postExcerpt.split(' ').slice(0, words).join(' ')
 }
 
 if (maxLength > 0) {
-  postText = postText.substring(0, maxLength)
+  postExcerpt = postExcerpt.substring(0, maxLength)
 }
 
 if (addEllipsis) {
-  postText += '…'
+  const postLength = postExcerpt.length
+
+  if (postLength > 0) {
+    if (smartEllipsis) {
+      const lastChar = postExcerpt.at(postExcerpt.length - 1)
+
+      if (!punctuationSymbols.includes(lastChar)) {
+        postExcerpt += ellipsis
+      }
+    } else {
+      postExcerpt += ellipsis
+    }
+  }
 }
 ---
 
-<Fragment set:text={postText} />
+<Fragment set:text={postExcerpt} />
