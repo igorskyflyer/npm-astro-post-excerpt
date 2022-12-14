@@ -9,6 +9,12 @@
 </p>
 
 <br>
+
+<blockquote align="center">
+Now featured on Astro's official <a href="https://astro.build/integrations/css+ui/?q=igor.dvlpr" target="_blank">Integrations library</a> 😍
+</blockquote>
+
+<br>
 <br>
 
 <p align="center">
