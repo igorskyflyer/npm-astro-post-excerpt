@@ -4,6 +4,13 @@
 
 <br>
 
+## 1.1.1 - 16-Dec-2022
+
+- upgraded dependencies,
+- minor README fixes
+
+<br>
+
 ## 1.1.0 - 02-Dec-2022
 
 - fixed [`maxLength`](https://github.com/igorskyflyer/npm-astro-post-excerpt#maxlength) issue ([#10](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/10)),
