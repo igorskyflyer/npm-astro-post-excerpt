@@ -160,3 +160,7 @@ ellipsis?: string
 **optional**, controls the ellipsis string that should be appended to the post excerpt. Defaults to **"…"**.
 
 If this prop is not valid, a warning will be output to the console.
+
+<br>
+
+> ✨ Changelog is available here: [CHANGELOG.md](https://github.com/igorskyflyer/npm-astro-post-excerpt/blob/main/CHANGELOG.md).
