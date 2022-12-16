@@ -15,6 +15,14 @@ Now featured on Astro's official <a href="https://astro.build/integrations/css+u
 </blockquote>
 
 <br>
+
+<div align="center">
+<h3>💖 Support further development</h3>
+<a href="https://ko-fi.com/igorskyflyer" target="_blank"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/ko-fi.png" alt="Donate to igorskyflyer" width="108"></a>
+</div>
+
+<br>
+<br>
 <br>
 
 <p align="center">
@@ -132,6 +140,7 @@ smartEllipsis?: boolean
 **optional**, controls whether the appended ellipsis should be aware of how the excerpt ends, i.e. if the excerpt ends with a punctuation symbol the ellipsis won't be appended. Defaults to **true**.
 
 **Note**: punctuation symbols that this component is aware of are:
+
 - `"."`
 - `","`
 - `"?"`
