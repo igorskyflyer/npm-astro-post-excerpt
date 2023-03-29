@@ -2,6 +2,7 @@
 import { MarkdownInstance } from 'astro'
 
 import { PropHeadings } from './PropHeadings.astro'
+import { stripHeadings } from '@igor.dvlpr/strip-headings'
 
 export interface Props {
   /**
@@ -83,7 +84,7 @@ if (typeof headings !== 'number' || !PropHeadings[headings]) {
 postExcerpt = post.rawContent().trim()
 
 if (headings === PropHeadings.strip) {
-  console.log('Strip')
+  postExcerpt = stripHeadings(postExcerpt)
 }
 
 if (words > 0) {
