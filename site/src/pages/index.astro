@@ -1,6 +1,5 @@
 ---
-import PostExcerpt from '../../../index'
-import { PropHeadings } from '../../../src/PropHeadings.astro';
+import PostExcerpt, { PropHeadings } from '../../../index'
 
 const posts = await Astro.glob('../blog/*.md')
 ---
@@ -12,7 +11,7 @@ const posts = await Astro.glob('../blog/*.md')
   </head>
   <body>
     {posts.map((post) =>
-		<PostExcerpt post={post} words={14} headings={PropHeadings.strip} smartEllipsis={false} />
+		<PostExcerpt post={post} words={14} headings={PropHeadings.None} smartEllipsis={false}  />
 		<br>
 		<br>
 		)}
