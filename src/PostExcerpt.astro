@@ -1,6 +1,8 @@
 ---
 import { MarkdownInstance } from 'astro'
 
+import { PropHeadings } from './PropHeadings.astro'
+
 export interface Props {
   /**
    * The post whose excerpt you want to generate and render. If this prop is not supplied or not valid, the component will throw an error.
@@ -27,9 +29,9 @@ export interface Props {
    */
   ellipsis?: string
   /**
-   * Controls whether the leading post headings should be stripped. Defaults to **true**.
+   * Controls whether the leading post headings should be stripped or preserved. Defaults to "**preserve**".
    */
-  stripHeadings?: boolean
+  headings?: PropHeadings
 }
 
 const punctuationSymbols = ['.', ',', '?', '!', ';']
@@ -40,8 +42,8 @@ let {
   addEllipsis = true,
   smartEllipsis = true,
   ellipsis = '…',
-  stripHeadings = true,
-} = Astro.props
+  headings = PropHeadings.preserve,
+} = Astro.props as Props
 let postExcerpt = ''
 
 if (!post || typeof post['compiledContent'] !== 'function') {
@@ -73,16 +75,15 @@ if (typeof ellipsis !== 'string' || ellipsis.length < 1) {
   console.warn('The optional prop ellipsis is not valid, defaulting to "…".')
 }
 
-if (typeof stripHeadings !== 'boolean') {
-  stripHeadings = true
-  console.warn('The optional prop stripHeadings is not valid, defaulting to true.')
+if (typeof headings !== 'number' || !PropHeadings[headings]) {
+  headings = PropHeadings.preserve
+  console.warn('The optional prop headings is not valid, defaulting to "preserve".')
 }
 
 postExcerpt = post.rawContent().trim()
 
-if (stripHeadings) {
-  postExcerpt = postExcerpt.replace(/#{1,6}.+/gm, '')
-  console.log(postExcerpt)
+if (headings === PropHeadings.strip) {
+  console.log('Strip')
 }
 
 if (words > 0) {
