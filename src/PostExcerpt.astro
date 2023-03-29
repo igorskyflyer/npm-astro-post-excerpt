@@ -2,7 +2,7 @@
 import { MarkdownInstance } from 'astro'
 
 import { PropHeadings } from './PropHeadings.astro'
-import { stripHeadings } from '@igor.dvlpr/strip-headings'
+import { stripHeadings, stripHeadingsCode } from '@igor.dvlpr/strip-headings'
 
 export interface Props {
   /**
@@ -43,7 +43,7 @@ let {
   addEllipsis = true,
   smartEllipsis = true,
   ellipsis = '…',
-  headings = PropHeadings.preserve,
+  headings = PropHeadings.Intact,
 } = Astro.props as Props
 let postExcerpt = ''
 
@@ -77,14 +77,16 @@ if (typeof ellipsis !== 'string' || ellipsis.length < 1) {
 }
 
 if (typeof headings !== 'number' || !PropHeadings[headings]) {
-  headings = PropHeadings.preserve
-  console.warn('The optional prop headings is not valid, defaulting to "preserve".')
+  headings = PropHeadings.Intact
+  console.warn('The optional prop headings is not valid, defaulting to "PropHeadings.Intact".')
 }
 
 postExcerpt = post.rawContent().trim()
 
-if (headings === PropHeadings.strip) {
+if (headings === PropHeadings.None) {
   postExcerpt = stripHeadings(postExcerpt)
+} else if (headings === PropHeadings.TextOnly) {
+  postExcerpt = stripHeadingsCode(postExcerpt)
 }
 
 if (words > 0) {
