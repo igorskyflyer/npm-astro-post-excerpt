@@ -166,10 +166,23 @@ If this prop is not valid, a warning will be output to the console.
 ### headings
 
 ```ts
-headings?: PropHeadings
+headings?: PropHeadings = (Intact, TextOnly, None)
 ```
 
-**optional**, controls whether the leading post headings should be stripped or preserved. Defaults to "**PropHeadings.preserve**".
+**optional**, controls whether the leading post headings should be stripped or preserved. Defaults to "**PropHeadings.Intact**".
+
+<br>
+
+```ts
+enum PropHeadings {
+  /** Leave the headings intact. */
+  Intact,
+  /** Remove Markdown code but keep the headings text. */
+  TextOnly,
+  /** Remove the headings completely. */
+  None,
+}
+```
 
 If this prop is not valid, a warning will be output to the console.
 
