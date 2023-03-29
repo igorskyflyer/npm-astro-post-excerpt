@@ -37,7 +37,8 @@
 	},
 	"homepage": "https://github.com/igorskyflyer/npm-astro-post-excerpt#readme",
 	"devDependencies": {
-		"astro": "^1.9.2"
+		"astro": "^1.9.2",
+		"@igor.dvlpr/strip-headings": "^1.0.0"
 	},
 	"peerDependencies": {
 		"astro": "^1.9.2"
