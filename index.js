@@ -1,4 +1,4 @@
 // @ts-ignore
-import PostExcerpt from './src/PostExcerpt.astro'
-
-export default PostExcerpt
+export { default } from './src/PostExcerpt.astro'
+// @ts-ignore
+export { PropHeadings } from './src/PropHeadings.astro'
