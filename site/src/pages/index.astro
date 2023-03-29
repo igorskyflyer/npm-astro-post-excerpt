@@ -12,7 +12,7 @@ const posts = await Astro.glob('../blog/*.md')
   </head>
   <body>
     {posts.map((post) =>
-		<PostExcerpt post={post} words={14} headings={PropHeadings.strip} />
+		<PostExcerpt post={post} words={14} headings={PropHeadings.strip} smartEllipsis={false} />
 		<br>
 		<br>
 		)}
