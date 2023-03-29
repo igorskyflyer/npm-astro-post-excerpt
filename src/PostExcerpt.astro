@@ -1,0 +1,113 @@
+---
+import { MarkdownInstance } from 'astro'
+
+export interface Props {
+  /**
+   * The post whose excerpt you want to generate and render. If this prop is not supplied or not valid, the component will throw an error.
+   */
+  post: MarkdownInstance<Record<string, any>>
+  /**
+   * The number of words the generated excerpt should have in total. Be aware that the prop `maxLength` has precedence over this prop but you can use both props simultaneously. Defaults to **40**.
+   */
+  words?: number
+  /**
+   * Max length of the generated excerpt. Be aware that this prop has precedence over the `words` prop but you can use both props simultaneously. Defaults to **0** (unlimited).
+   */
+  maxLength?: number
+  /**
+   * Controls whether an ellipsis ("…" is the default, you can configure it) should be appended to the post excerpt. Defaults to **true**.
+   */
+  addEllipsis?: boolean
+  /**
+   * Controls whether the appended ellipsis should be aware of how the excerpt ends, i.e. if the excerpt ends with a punctuation symbol the ellipsis won't be appended. Defaults to **true**.
+   */
+  smartEllipsis?: boolean
+  /**
+   * Controls the ellipsis string that should be appended to the post excerpt. Defaults to **"…"**.
+   */
+  ellipsis?: string
+  /**
+   * Controls whether the leading post headings should be stripped. Defaults to **true**.
+   */
+  stripHeadings?: boolean
+}
+
+const punctuationSymbols = ['.', ',', '?', '!', ';']
+let {
+  post,
+  words = 40,
+  maxLength = 0,
+  addEllipsis = true,
+  smartEllipsis = true,
+  ellipsis = '…',
+  stripHeadings = true,
+} = Astro.props
+let postExcerpt = ''
+
+if (!post || typeof post['compiledContent'] !== 'function') {
+  throw new TypeError('The required prop post is not valid, aborting now.')
+}
+
+if (typeof words !== 'number' || words < 0) {
+  words = 40
+  console.warn('The optional prop words is not valid, defaulting to 40.')
+}
+
+if (typeof maxLength !== 'number' || maxLength < 0) {
+  maxLength = 0
+  console.warn('The optional prop maxLength is not valid, defaulting to 0.')
+}
+
+if (typeof addEllipsis !== 'boolean') {
+  addEllipsis = true
+  console.warn('The optional prop addEllipsis is not valid, defaulting to true.')
+}
+
+if (typeof smartEllipsis !== 'boolean') {
+  smartEllipsis = true
+  console.warn('The optional prop smartEllipsis is not valid, defaulting to true.')
+}
+
+if (typeof ellipsis !== 'string' || ellipsis.length < 1) {
+  ellipsis = '…'
+  console.warn('The optional prop ellipsis is not valid, defaulting to "…".')
+}
+
+if (typeof stripHeadings !== 'boolean') {
+  stripHeadings = true
+  console.warn('The optional prop stripHeadings is not valid, defaulting to true.')
+}
+
+postExcerpt = post.rawContent().trim()
+
+if (stripHeadings) {
+  postExcerpt = postExcerpt.replace(/#{1,6}.+/gm, '')
+  console.log(postExcerpt)
+}
+
+if (words > 0) {
+  postExcerpt = postExcerpt.split(' ').slice(0, words).join(' ')
+}
+
+if (maxLength > 0) {
+  postExcerpt = postExcerpt.substring(0, maxLength)
+}
+
+if (addEllipsis) {
+  const postLength = postExcerpt.length
+
+  if (postLength > 0) {
+    if (smartEllipsis) {
+      const lastChar = postExcerpt.at(postExcerpt.length - 1)
+
+      if (!punctuationSymbols.includes(lastChar)) {
+        postExcerpt += ellipsis
+      }
+    } else {
+      postExcerpt += ellipsis
+    }
+  }
+}
+---
+
+<Fragment set:text={postExcerpt} />
