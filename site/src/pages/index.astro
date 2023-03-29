@@ -1,0 +1,19 @@
+---
+import PostExcerpt from '../../../PostExcerpt.astro'
+
+const posts = await Astro.glob('../blog/*.md')
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    {posts.map((post) =>
+		<PostExcerpt post={post} words={14}  />
+		<br>
+		<br>
+		)}
+  </body>
+</html>
