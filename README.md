@@ -163,4 +163,16 @@ If this prop is not valid, a warning will be output to the console.
 
 <br>
 
+### headings
+
+```ts
+headings?: PropHeadings
+```
+
+**optional**, controls whether the leading post headings should be stripped or preserved. Defaults to "**PropHeadings.preserve**".
+
+If this prop is not valid, a warning will be output to the console.
+
+<br>
+
 > ✨ Changelog is available here: [CHANGELOG.md](https://github.com/igorskyflyer/npm-astro-post-excerpt/blob/main/CHANGELOG.md).
