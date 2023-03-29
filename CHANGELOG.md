@@ -7,10 +7,10 @@
 ## 1.2.0 - 29-Mar-2023
 
 - feature: preserve or strip post headings in the rendered excerpt ([#12](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/12)),
-- upgrade dependencies,
+- fix: broken integrations link ([#16](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/16)),
+- dev: upgrade dependencies,
 - dev: make the test site public
-- fix broken integrations link ([#16](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/16)),
-- update author link ([#17](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/17))
+- dev: update author link ([#17](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/17))
 
 <br>
 
