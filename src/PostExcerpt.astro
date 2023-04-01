@@ -130,5 +130,5 @@ if (addEllipsis) {
 }
 ---
 
-{renderer === PropRenderer.html && <Fragment set:html={postExcerpt} />}
+{renderer === PropRenderer.html || (renderer === PropRenderer.hybrid && <Fragment set:html={postExcerpt} />)}
 {renderer === PropRenderer.text && <Fragment set:text={postExcerpt} />}
