@@ -7,7 +7,7 @@
 ## 1.3.0 - 01-Apr-2023
 
 - feature: add an HTML render ([#18](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/18))
-- update [@igor.dvlpr/strip-headings](https://www.npmjs.com/package/@igor.dvlpr/strip-headings) to `v1.1.0` which brings:
+- add [@igor.dvlpr/strip-html-headings](https://www.npmjs.com/package/@igor.dvlpr/strip-html-headings) which brings:
   - stripping of HTML headings,
   - extracting of HTML headings
 
