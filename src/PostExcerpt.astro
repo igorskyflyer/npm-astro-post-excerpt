@@ -1,8 +1,9 @@
 ---
 import { MarkdownInstance } from 'astro'
 
-import { PropHeadings } from './PropHeadings.astro'
+import { PropHeadings } from './PropHeadings'
 import { stripHeadings, stripHeadingsCode } from '@igor.dvlpr/strip-headings'
+import { Fragment } from 'astro/dist/runtime/server'
 
 export interface Props {
   /**
