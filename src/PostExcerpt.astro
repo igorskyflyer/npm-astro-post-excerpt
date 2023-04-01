@@ -1,9 +1,10 @@
 ---
 import { MarkdownInstance } from 'astro'
 
-import { PropHeadings } from './PropHeadings'
 import { stripHeadings, stripHeadingsCode } from '@igor.dvlpr/strip-headings'
-import { Fragment } from 'astro/dist/runtime/server'
+
+import { PropHeadings } from './PropHeadings'
+import { PropRenderer } from './PropRenderer'
 
 export interface Props {
   /**
@@ -34,6 +35,8 @@ export interface Props {
    * Controls whether the leading post headings should be stripped or preserved. Defaults to "**PropHeadings.Intact**".
    */
   headings?: PropHeadings
+  /** */
+  renderer?: PropRenderer
 }
 
 const punctuationSymbols = ['.', ',', '?', '!', ';']
@@ -45,6 +48,7 @@ let {
   smartEllipsis = true,
   ellipsis = '…',
   headings = PropHeadings.Intact,
+  renderer = PropRenderer.text,
 } = Astro.props as Props
 let postExcerpt = ''
 
@@ -82,7 +86,18 @@ if (typeof headings !== 'number' || !PropHeadings[headings]) {
   console.warn('The optional prop headings is not valid, defaulting to "PropHeadings.Intact".')
 }
 
-postExcerpt = post.rawContent().trim()
+if (typeof renderer !== 'number' || !PropRenderer[renderer]) {
+  renderer = PropRenderer.text
+  console.warn('The optional prop renderer is not valid, defaulting to "PropRenderer.text".')
+}
+
+if (renderer === PropRenderer.html) {
+  postExcerpt = post.compiledContent()
+} else {
+  postExcerpt = post.rawContent()
+}
+
+postExcerpt = postExcerpt.trim()
 
 if (headings === PropHeadings.None) {
   postExcerpt = stripHeadings(postExcerpt)
@@ -115,4 +130,5 @@ if (addEllipsis) {
 }
 ---
 
-<Fragment set:text={postExcerpt} />
+{renderer === PropRenderer.html && <Fragment set:html={postExcerpt} />}
+{renderer === PropRenderer.text && <Fragment set:text={postExcerpt} />}
