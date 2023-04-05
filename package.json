@@ -1,6 +1,6 @@
 {
 	"name": "@igor.dvlpr/astro-post-excerpt",
-	"version": "1.3.1",
+	"version": "1.3.2",
 	"description": "⭐ An Astro component that renders post excerpts for your Astro blog - directly from your Markdown files! 💎",
 	"type": "module",
 	"files": [
