@@ -5,7 +5,7 @@
 	"type": "module",
 	"files": [
 		"index.ts",
-		"src"
+		"PostExcerpt.astro"
 	],
 	"scripts": {
 		"pub": "npm publish --access public"
