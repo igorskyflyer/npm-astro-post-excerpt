@@ -35,7 +35,12 @@ export interface Props {
    * Controls whether the leading post headings should be stripped or preserved. Defaults to "**PropHeadings.Intact**".
    */
   headings?: PropHeadings
-  /** Controls the rendering of the post excerpt.  */
+  /** Controls the rendering of the post excerpt.  Defaults to "**PropRenderer.Text**"
+   *
+   * - `Text` - render post excerpts as simple text, no HTML entities supported,
+   * - `Html` - render post excerpts as HTML, HTML entities supported,
+   * - `Hybrid` - render post excerpts as simple text but allow HTML entities as well.
+   */
   renderer?: PropRenderer
 }
 
