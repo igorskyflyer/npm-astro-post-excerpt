@@ -7,7 +7,7 @@ tag: js,javascript,html,tutorial
 
 # Zeus - an HTML library
 
-Zeus allows you to create HTML elements and set their attributes in a completely different manner &ndash; all at once! Zeus allows you to create HTML elements and set their attributes in a completely different manner &ndash; all at once!
+Zeus&copy; allows you to create HTML elements and set their attributes in a completely different manner &ndash; all at once! Zeus allows you to create HTML elements and set their attributes in a completely different manner &ndash; all at once!
 
 <br>
 

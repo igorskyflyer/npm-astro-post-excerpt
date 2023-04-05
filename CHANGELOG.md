@@ -4,6 +4,15 @@
 
 <br>
 
+## 1.3.0 - 01-Apr-2023
+
+- feature: add an HTML render ([#18](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/18))
+- add [@igor.dvlpr/strip-html](https://www.npmjs.com/package/@igor.dvlpr/strip-html) which brings:
+  - stripping of HTML code,
+  - extracting of text content from HTML code
+
+<br>
+
 ## 1.2.3 - 29-Mar-2023
 
 - feature: preserve or strip post headings in the rendered excerpt ([#12](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/12))

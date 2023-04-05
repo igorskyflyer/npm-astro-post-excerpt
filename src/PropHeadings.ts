@@ -1,4 +1,3 @@
----
 export enum PropHeadings {
   /** Leave the headings intact. */
   Intact,
@@ -7,4 +6,3 @@ export enum PropHeadings {
   /** Remove the headings completely. */
   None,
 }
----

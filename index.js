@@ -1,4 +1,5 @@
 // @ts-ignore
 export { default } from './src/PostExcerpt.astro'
-// @ts-ignore
-export { PropHeadings } from './src/PropHeadings.astro'
+
+export { PropHeadings } from './src/PropHeadings'
+export { PropRenderer } from './src/PropRenderer'

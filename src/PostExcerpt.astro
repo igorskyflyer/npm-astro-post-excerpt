@@ -1,8 +1,12 @@
 ---
 import { MarkdownInstance } from 'astro'
-
-import { PropHeadings } from './PropHeadings.astro'
 import { stripHeadings, stripHeadingsCode } from '@igor.dvlpr/strip-headings'
+import { stripHtmlCode } from '@igor.dvlpr/strip-html'
+import { stripHeadings as stripHtmlHeadings, stripHeadingsCode as stripHtmlHeadingsCode } from '@igor.dvlpr/strip-html-headings'
+import { PropHeadings } from './PropHeadings'
+import { PropRenderer } from './PropRenderer'
+
+const symbolEllipsis = '…'
 
 export interface Props {
   /**
@@ -31,19 +35,31 @@ export interface Props {
   ellipsis?: string
   /**
    * Controls whether the leading post headings should be stripped or preserved. Defaults to "**PropHeadings.Intact**".
+   *
+   * - `Intact` - leave the headings intact,
+   * - `TextOnly` - remove Markdown code but keep the headings text,
+   * - `None` - remove the headings completely.
    */
   headings?: PropHeadings
+  /** Controls the rendering of the post excerpt.  Defaults to "**PropRenderer.Text**"
+   *
+   * - `Text` - render post excerpts as simple text, no HTML entities supported,
+   * - `Html` - render post excerpts as HTML, HTML entities supported,
+   * - `Hybrid` - render post excerpts as simple text but allow HTML entities as well.
+   */
+  renderer?: PropRenderer
 }
 
-const punctuationSymbols = ['.', ',', '?', '!', ';']
+const punctuationSymbols = ['.', ',', '?', '!', ';', symbolEllipsis]
 let {
   post,
   words = 40,
   maxLength = 0,
   addEllipsis = true,
   smartEllipsis = true,
-  ellipsis = '…',
+  ellipsis = symbolEllipsis,
   headings = PropHeadings.Intact,
+  renderer = PropRenderer.Text,
 } = Astro.props as Props
 let postExcerpt = ''
 
@@ -72,7 +88,7 @@ if (typeof smartEllipsis !== 'boolean') {
 }
 
 if (typeof ellipsis !== 'string' || ellipsis.length < 1) {
-  ellipsis = '…'
+  ellipsis = symbolEllipsis
   console.warn('The optional prop ellipsis is not valid, defaulting to "…".')
 }
 
@@ -81,13 +97,36 @@ if (typeof headings !== 'number' || !PropHeadings[headings]) {
   console.warn('The optional prop headings is not valid, defaulting to "PropHeadings.Intact".')
 }
 
-postExcerpt = post.rawContent().trim()
-
-if (headings === PropHeadings.None) {
-  postExcerpt = stripHeadings(postExcerpt)
-} else if (headings === PropHeadings.TextOnly) {
-  postExcerpt = stripHeadingsCode(postExcerpt)
+if (typeof renderer !== 'number' || !PropRenderer[renderer]) {
+  renderer = PropRenderer.Text
+  console.warn('The optional prop renderer is not valid, defaulting to "PropRenderer.Text".')
 }
+
+if (renderer === PropRenderer.Text) {
+  postExcerpt = post.rawContent()
+} else {
+  postExcerpt = post.compiledContent()
+}
+
+if (renderer === PropRenderer.Text) {
+  if (headings === PropHeadings.None) {
+    postExcerpt = stripHeadings(postExcerpt)
+  } else if (headings === PropHeadings.TextOnly) {
+    postExcerpt = stripHeadingsCode(postExcerpt)
+  }
+} else {
+  if (headings === PropHeadings.None) {
+    postExcerpt = stripHtmlHeadings(postExcerpt)
+  } else if (headings === PropHeadings.TextOnly) {
+    postExcerpt = stripHtmlHeadingsCode(postExcerpt)
+  }
+}
+
+if (renderer === PropRenderer.Hybrid) {
+  postExcerpt = stripHtmlCode(postExcerpt)
+}
+
+postExcerpt = postExcerpt.trim()
 
 if (words > 0) {
   postExcerpt = postExcerpt.split(' ').slice(0, words).join(' ')
@@ -114,4 +153,5 @@ if (addEllipsis) {
 }
 ---
 
-<Fragment set:text={postExcerpt} />
+{(renderer === PropRenderer.Html || renderer === PropRenderer.Hybrid) && <Fragment set:html={postExcerpt} />}
+{renderer === PropRenderer.Text && <Fragment set:text={postExcerpt} />}
