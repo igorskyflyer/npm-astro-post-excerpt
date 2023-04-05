@@ -48,7 +48,7 @@ let {
   smartEllipsis = true,
   ellipsis = '…',
   headings = PropHeadings.Intact,
-  renderer = PropRenderer.text,
+  renderer = PropRenderer.Text,
 } = Astro.props as Props
 let postExcerpt = ''
 
@@ -87,17 +87,17 @@ if (typeof headings !== 'number' || !PropHeadings[headings]) {
 }
 
 if (typeof renderer !== 'number' || !PropRenderer[renderer]) {
-  renderer = PropRenderer.text
-  console.warn('The optional prop renderer is not valid, defaulting to "PropRenderer.text".')
+  renderer = PropRenderer.Text
+  console.warn('The optional prop renderer is not valid, defaulting to "PropRenderer.Text".')
 }
 
-if (renderer === PropRenderer.text) {
+if (renderer === PropRenderer.Text) {
   postExcerpt = post.rawContent()
 } else {
   postExcerpt = post.compiledContent()
 }
 
-if (renderer === PropRenderer.text) {
+if (renderer === PropRenderer.Text) {
   if (headings === PropHeadings.None) {
     postExcerpt = stripHeadings(postExcerpt)
   } else if (headings === PropHeadings.TextOnly) {
@@ -111,7 +111,7 @@ if (renderer === PropRenderer.text) {
   }
 }
 
-if (renderer === PropRenderer.hybrid) {
+if (renderer === PropRenderer.Hybrid) {
   postExcerpt = stripHtmlCode(postExcerpt)
 }
 
@@ -142,5 +142,5 @@ if (addEllipsis) {
 }
 ---
 
-{(renderer === PropRenderer.html || renderer === PropRenderer.hybrid) && <Fragment set:html={postExcerpt} />}
-{renderer === PropRenderer.text && <Fragment set:text={postExcerpt} />}
+{(renderer === PropRenderer.Html || renderer === PropRenderer.Hybrid) && <Fragment set:html={postExcerpt} />}
+{renderer === PropRenderer.Text && <Fragment set:text={postExcerpt} />}
