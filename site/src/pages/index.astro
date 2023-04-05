@@ -11,7 +11,7 @@ const posts = await Astro.glob('../blog/*.md')
   </head>
   <body>
     {posts.map((post) =>
-		<PostExcerpt post={post} words={14} headings={PropHeadings.None} smartEllipsis={true} renderer={PropRenderer.Hybrid} />
+		<PostExcerpt post={post} words={14} headings={PropHeadings.None} smartEllipsis={false} renderer={PropRenderer.Hybrid} />
 		<br>
 		<br>
 		)}
