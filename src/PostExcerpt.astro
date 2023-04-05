@@ -6,6 +6,8 @@ import { stripHeadings as stripHtmlHeadings, stripHeadingsCode as stripHtmlHeadi
 import { PropHeadings } from './PropHeadings'
 import { PropRenderer } from './PropRenderer'
 
+const symbolEllipsis = '…'
+
 export interface Props {
   /**
    * The post whose excerpt you want to generate and render. If this prop is not supplied or not valid, the component will throw an error.
@@ -48,14 +50,14 @@ export interface Props {
   renderer?: PropRenderer
 }
 
-const punctuationSymbols = ['.', ',', '?', '!', ';']
+const punctuationSymbols = ['.', ',', '?', '!', ';', symbolEllipsis]
 let {
   post,
   words = 40,
   maxLength = 0,
   addEllipsis = true,
   smartEllipsis = true,
-  ellipsis = '…',
+  ellipsis = symbolEllipsis,
   headings = PropHeadings.Intact,
   renderer = PropRenderer.Text,
 } = Astro.props as Props
@@ -86,7 +88,7 @@ if (typeof smartEllipsis !== 'boolean') {
 }
 
 if (typeof ellipsis !== 'string' || ellipsis.length < 1) {
-  ellipsis = '…'
+  ellipsis = symbolEllipsis
   console.warn('The optional prop ellipsis is not valid, defaulting to "…".')
 }
 
