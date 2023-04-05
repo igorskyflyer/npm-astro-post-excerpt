@@ -3,6 +3,6 @@ export enum PropRenderer {
   text,
   /** Render post excerpts as HTML, entities supported. */
   html,
-  /** Render post excerpts as simple text but allow entities as well. */
+  /** Render post excerpts as simple text but allow HTML entities as well. */
   hybrid,
 }
