@@ -4,6 +4,12 @@
 
 <br>
 
+## 1.3.2 - 06-Apr-2023
+
+- dev: improve IntelliSense
+
+<br>
+
 ## 1.3.1 - 05-Apr-2023
 
 - feature: add an HTML render ([#18](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/18))

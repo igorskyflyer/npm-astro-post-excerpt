@@ -1,4 +1,4 @@
 // @ts-ignore
-export { default } from './src/PostExcerpt.astro'
+export { default } from './PostExcerpt.astro'
 // @ts-ignore
-export * from './src/PostExcerpt.astro'
+export * from './PostExcerpt.astro'
