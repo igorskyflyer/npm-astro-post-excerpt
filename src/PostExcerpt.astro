@@ -5,6 +5,7 @@ import { stripHeadings, stripHeadingsCode } from '@igor.dvlpr/strip-headings'
 
 import { PropHeadings } from './PropHeadings'
 import { PropRenderer } from './PropRenderer'
+import { stripHtmlCode } from '@igor.dvlpr/strip-html'
 
 export interface Props {
   /**
@@ -91,13 +92,17 @@ if (typeof renderer !== 'number' || !PropRenderer[renderer]) {
   console.warn('The optional prop renderer is not valid, defaulting to "PropRenderer.text".')
 }
 
-if (renderer === PropRenderer.html) {
-  postExcerpt = post.compiledContent()
-} else {
+if (renderer === PropRenderer.text) {
   postExcerpt = post.rawContent()
+} else {
+  postExcerpt = post.compiledContent()
 }
 
 postExcerpt = postExcerpt.trim()
+
+if (renderer === PropRenderer.hybrid) {
+  postExcerpt = stripHtmlCode(postExcerpt)
+}
 
 if (headings === PropHeadings.None) {
   postExcerpt = stripHeadings(postExcerpt)
@@ -130,5 +135,5 @@ if (addEllipsis) {
 }
 ---
 
-{renderer === PropRenderer.html || (renderer === PropRenderer.hybrid && <Fragment set:html={postExcerpt} />)}
+{(renderer === PropRenderer.html || renderer === PropRenderer.hybrid) && <Fragment set:html={postExcerpt} />}
 {renderer === PropRenderer.text && <Fragment set:text={postExcerpt} />}
