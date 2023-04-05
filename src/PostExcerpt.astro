@@ -98,8 +98,6 @@ if (renderer === PropRenderer.text) {
   postExcerpt = post.compiledContent()
 }
 
-postExcerpt = postExcerpt.trim()
-
 if (renderer === PropRenderer.hybrid) {
   postExcerpt = stripHtmlCode(postExcerpt)
 }
@@ -109,6 +107,8 @@ if (headings === PropHeadings.None) {
 } else if (headings === PropHeadings.TextOnly) {
   postExcerpt = stripHeadingsCode(postExcerpt)
 }
+
+postExcerpt = postExcerpt.trim()
 
 if (words > 0) {
   postExcerpt = postExcerpt.split(' ').slice(0, words).join(' ')
