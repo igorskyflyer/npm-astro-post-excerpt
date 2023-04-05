@@ -166,23 +166,46 @@ If this prop is not valid, a warning will be output to the console.
 ### headings
 
 ```ts
-headings?: PropHeadings = (Intact, TextOnly, None)
+headings?: PropHeadings
 ```
 
 **optional**, controls whether the leading post headings should be stripped or preserved. Defaults to "**PropHeadings.Intact**".
 
 <br>
 
+Possible values:
+
+- `Intact` - leave the headings intact,
+
+- `TextOnly` - remove Markdown code but keep the headings text,
+
+- `None` - remove the headings completely.
+
+<br>
+
+If this prop is not valid, a warning will be output to the console.
+
+<br>
+
+### renderer
+
 ```ts
-enum PropHeadings {
-  /** Leave the headings intact. */
-  Intact,
-  /** Remove Markdown code but keep the headings text. */
-  TextOnly,
-  /** Remove the headings completely. */
-  None,
-}
+renderer?: PropRenderer
 ```
+
+**optional**, controls the rendering of the post excerpt. Defaults to "**PropRenderer.Text**".
+
+<br>
+
+Possible values:
+
+- `Text` - render post excerpts as simple text, no HTML entities supported,
+
+- `Html` - render post excerpts as HTML, HTML entities supported,
+
+- `Hybrid` - render post excerpts as simple text but allow HTML entities as well.
+
+<br>
 
 If this prop is not valid, a warning will be output to the console.
 
