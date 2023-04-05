@@ -3,10 +3,26 @@ import { MarkdownInstance } from 'astro'
 import { stripHeadings, stripHeadingsCode } from '@igor.dvlpr/strip-headings'
 import { stripHtmlCode } from '@igor.dvlpr/strip-html'
 import { stripHeadings as stripHtmlHeadings, stripHeadingsCode as stripHtmlHeadingsCode } from '@igor.dvlpr/strip-html-headings'
-import { PropHeadings } from './PropHeadings'
-import { PropRenderer } from './PropRenderer'
 
 const symbolEllipsis = '…'
+
+export enum PropHeadings {
+  /** Leave the headings intact. */
+  Intact,
+  /** Remove Markdown code but keep the headings text. */
+  TextOnly,
+  /** Remove the headings completely. */
+  None,
+}
+
+export enum PropRenderer {
+  /** Render post excerpts as simple text, no HTML entities supported. */
+  Text,
+  /** Render post excerpts as HTML, HTML entities supported. */
+  Html,
+  /** Render post excerpts as simple text but allow HTML entities as well. */
+  Hybrid,
+}
 
 export interface Props {
   /**
