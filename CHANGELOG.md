@@ -4,12 +4,19 @@
 
 <br>
 
-## 1.3.0 - 01-Apr-2023
+## 1.3.1 - 05-Apr-2023
 
 - feature: add an HTML render ([#18](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/18))
 - add [@igor.dvlpr/strip-html](https://www.npmjs.com/package/@igor.dvlpr/strip-html) which brings:
   - stripping of HTML code,
   - extracting of text content from HTML code
+- add [@igor.dvlpr/strip-html-headings](https://www.npmjs.com/package/@igor.dvlpr/strip-html-headings) which brings:
+  - stripping of HTML headings' code,
+  - extracting of text content from HTML headings
+- moved to TypeScript
+- dev: fix missing typings
+- detect ellipsis symbol in [smartEllipsis](https://github.com/igorskyflyer/npm-astro-post-excerpt#smartellipsis)
+- fix `trim()` sometimes not being applied
 
 <br>
 
