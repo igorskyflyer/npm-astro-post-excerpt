@@ -1,11 +1,10 @@
 ---
 import { MarkdownInstance } from 'astro'
-
 import { stripHeadings, stripHeadingsCode } from '@igor.dvlpr/strip-headings'
-
+import { stripHtmlCode } from '@igor.dvlpr/strip-html'
+import { stripHeadings as stripHtmlHeadings, stripHeadingsCode as stripHtmlHeadingsCode } from '@igor.dvlpr/strip-html-headings'
 import { PropHeadings } from './PropHeadings'
 import { PropRenderer } from './PropRenderer'
-import { stripHtmlCode } from '@igor.dvlpr/strip-html'
 
 export interface Props {
   /**
@@ -98,14 +97,22 @@ if (renderer === PropRenderer.text) {
   postExcerpt = post.compiledContent()
 }
 
-if (renderer === PropRenderer.hybrid) {
-  postExcerpt = stripHtmlCode(postExcerpt)
+if (renderer === PropRenderer.text) {
+  if (headings === PropHeadings.None) {
+    postExcerpt = stripHeadings(postExcerpt)
+  } else if (headings === PropHeadings.TextOnly) {
+    postExcerpt = stripHeadingsCode(postExcerpt)
+  }
+} else {
+  if (headings === PropHeadings.None) {
+    postExcerpt = stripHtmlHeadings(postExcerpt)
+  } else if (headings === PropHeadings.TextOnly) {
+    postExcerpt = stripHtmlHeadingsCode(postExcerpt)
+  }
 }
 
-if (headings === PropHeadings.None) {
-  postExcerpt = stripHeadings(postExcerpt)
-} else if (headings === PropHeadings.TextOnly) {
-  postExcerpt = stripHeadingsCode(postExcerpt)
+if (renderer === PropRenderer.hybrid) {
+  postExcerpt = stripHtmlCode(postExcerpt)
 }
 
 postExcerpt = postExcerpt.trim()
