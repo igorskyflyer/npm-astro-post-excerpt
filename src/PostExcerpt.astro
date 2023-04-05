@@ -33,6 +33,10 @@ export interface Props {
   ellipsis?: string
   /**
    * Controls whether the leading post headings should be stripped or preserved. Defaults to "**PropHeadings.Intact**".
+   *
+   * - `Intact` - leave the headings intact,
+   * - `TextOnly` - remove Markdown code but keep the headings text,
+   * - `None` - remove the headings completely.
    */
   headings?: PropHeadings
   /** Controls the rendering of the post excerpt.  Defaults to "**PropRenderer.Text**"
