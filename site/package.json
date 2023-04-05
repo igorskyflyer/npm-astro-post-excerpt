@@ -12,5 +12,8 @@
 	},
 	"dependencies": {
 		"astro": "^1.9.2"
+	},
+	"devDependencies": {
+		"@igor.dvlpr/astro-post-excerpt": "file:.."
 	}
 }
