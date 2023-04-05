@@ -146,6 +146,7 @@ smartEllipsis?: boolean
 - `"?"`
 - `"!"`
 - `";"`
+- `"…"`
 
 If this prop is not valid, a warning will be output to the console.
 
