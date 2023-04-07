@@ -1,7 +1,8 @@
 ---
+import { getCollection } from 'astro:content'
 import PostExcerpt, { PropHeadings, PropRenderer } from "@igor.dvlpr/astro-post-excerpt";
 
-const posts = await Astro.glob('../blog/*.md')
+const posts = await getCollection('blog')
 ---
 
 <!DOCTYPE html>
