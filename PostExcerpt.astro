@@ -6,6 +6,11 @@ import { stripHeadings as stripHtmlHeadings, stripHeadingsCode as stripHtmlHeadi
 
 const symbolEllipsis = '…'
 
+type AstroMarkdownFile = MarkdownInstance<Record<string, any>>
+type AstroCollectionEntry = {
+  body: string
+}
+
 export enum PropHeadings {
   /** Leave the headings intact. */
   Intact,
@@ -28,7 +33,7 @@ export interface Props {
   /**
    * The post whose excerpt you want to generate and render. If this prop is not supplied or not valid, the component will throw an error.
    */
-  post: MarkdownInstance<Record<string, any>>
+  post: AstroMarkdownFile | AstroCollectionEntry
   /**
    * The number of words the generated excerpt should have in total. Be aware that the prop `maxLength` has precedence over this prop but you can use both props simultaneously. Defaults to **40**.
    */
@@ -118,10 +123,20 @@ if (typeof renderer !== 'number' || !PropRenderer[renderer]) {
   console.warn('The optional prop renderer is not valid, defaulting to "PropRenderer.Text".')
 }
 
-if (renderer === PropRenderer.Text) {
-  postExcerpt = post.rawContent()
+if (typeof post['body'] === 'string') {
+  // Astro >= v2 detected
+  postExcerpt = post['body']
 } else {
-  postExcerpt = post.compiledContent()
+  // Astro < v2 detected
+  if (renderer === PropRenderer.Text) {
+    if ('rawContent' in post && typeof post['rawContent'] === 'function') {
+      postExcerpt = post.rawContent()
+    }
+  } else {
+    if ('compiledContent' in post && typeof post['compiledContent'] === 'function') {
+      postExcerpt = post.compiledContent()
+    }
+  }
 }
 
 if (renderer === PropRenderer.Text) {
