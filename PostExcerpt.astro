@@ -1,10 +1,17 @@
 ---
-import { MarkdownInstance } from 'astro'
 import { stripHeadings, stripHeadingsCode } from '@igor.dvlpr/strip-headings'
 import { stripHtmlCode } from '@igor.dvlpr/strip-html'
 import { stripHeadings as stripHtmlHeadings, stripHeadingsCode as stripHtmlHeadingsCode } from '@igor.dvlpr/strip-html-headings'
 
-const symbolEllipsis = '…'
+type AstroMarkdownFile = {
+  rawContent: Function
+  compiledContent: Function
+  [key: string]: any
+}
+type AstroCollectionEntry = {
+  body: string
+  [key: string]: any
+}
 
 export enum PropHeadings {
   /** Leave the headings intact. */
@@ -28,7 +35,7 @@ export interface Props {
   /**
    * The post whose excerpt you want to generate and render. If this prop is not supplied or not valid, the component will throw an error.
    */
-  post: MarkdownInstance<Record<string, any>>
+  post: AstroMarkdownFile | AstroCollectionEntry
   /**
    * The number of words the generated excerpt should have in total. Be aware that the prop `maxLength` has precedence over this prop but you can use both props simultaneously. Defaults to **40**.
    */
@@ -66,7 +73,17 @@ export interface Props {
   renderer?: PropRenderer
 }
 
+function isPriorV2(post: any): boolean {
+  return typeof post['compiledContent'] === 'function' && typeof post['rawContent'] === 'function'
+}
+
+function isV2(post: any): boolean {
+  return typeof post['body'] === 'string'
+}
+
+const symbolEllipsis = '…'
 const punctuationSymbols = ['.', ',', '?', '!', ';', symbolEllipsis]
+
 let {
   post,
   words = 40,
@@ -79,7 +96,7 @@ let {
 } = Astro.props as Props
 let postExcerpt = ''
 
-if (!post || typeof post['compiledContent'] !== 'function') {
+if (!post || (!isPriorV2(post) && !isV2(post))) {
   throw new TypeError('The required prop post is not valid, aborting now.')
 }
 
@@ -118,28 +135,43 @@ if (typeof renderer !== 'number' || !PropRenderer[renderer]) {
   console.warn('The optional prop renderer is not valid, defaulting to "PropRenderer.Text".')
 }
 
-if (renderer === PropRenderer.Text) {
-  postExcerpt = post.rawContent()
-} else {
-  postExcerpt = post.compiledContent()
+if (isV2(post)) {
+  // Astro >= v2 detected
+  postExcerpt = post['body']
+} else if (isPriorV2(post)) {
+  // Astro < v2 detected
+  post = post as AstroMarkdownFile
+
+  if (renderer === PropRenderer.Text) {
+    postExcerpt = post.rawContent()
+  } else {
+    postExcerpt = post.compiledContent()
+  }
 }
 
-if (renderer === PropRenderer.Text) {
+if (isPriorV2(post)) {
+  if (renderer === PropRenderer.Text) {
+    if (headings === PropHeadings.None) {
+      postExcerpt = stripHeadings(postExcerpt)
+    } else if (headings === PropHeadings.TextOnly) {
+      postExcerpt = stripHeadingsCode(postExcerpt)
+    }
+  } else {
+    if (headings === PropHeadings.None) {
+      postExcerpt = stripHtmlHeadings(postExcerpt)
+    } else if (headings === PropHeadings.TextOnly) {
+      postExcerpt = stripHtmlHeadingsCode(postExcerpt)
+    }
+  }
+  if (renderer === PropRenderer.Hybrid) {
+    postExcerpt = stripHtmlCode(postExcerpt)
+  }
+} else {
   if (headings === PropHeadings.None) {
     postExcerpt = stripHeadings(postExcerpt)
   } else if (headings === PropHeadings.TextOnly) {
     postExcerpt = stripHeadingsCode(postExcerpt)
   }
-} else {
-  if (headings === PropHeadings.None) {
-    postExcerpt = stripHtmlHeadings(postExcerpt)
-  } else if (headings === PropHeadings.TextOnly) {
-    postExcerpt = stripHtmlHeadingsCode(postExcerpt)
-  }
-}
-
-if (renderer === PropRenderer.Hybrid) {
-  postExcerpt = stripHtmlCode(postExcerpt)
 }
 
 postExcerpt = postExcerpt.trim()
