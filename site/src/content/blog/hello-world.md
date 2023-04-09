@@ -1,6 +1,5 @@
 ---
 title: Hello world 👋🏼
-layout: ../layouts/post.astro
 publishDate: 2022-09-08 02:43
 tag: hello
 ---
