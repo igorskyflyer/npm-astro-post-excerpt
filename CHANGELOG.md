@@ -4,6 +4,16 @@
 
 <br>
 
+## 2.0.0 - 09-Apr-2023
+
+- feat: add support for Astro v2 [Collections](https://docs.astro.build/en/guides/content-collections/)
+- dev: migrate to Astro v2, check it out for breaking changes:
+  - migrate using [Astro migration to v2](https://docs.astro.build/en/guides/upgrade-to/v2/)
+- feat: make the component backwards-compatible
+- dev: upgrade to Astro v2.2.0
+
+<br>
+
 ## 1.3.2 - 06-Apr-2023
 
 - dev: improve IntelliSense
