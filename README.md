@@ -5,7 +5,7 @@
 <h1 align="center">Post Excerpt component for 🚀 Astro</h1>
 
 <p align="center">
-⭐ An Astro component that renders post excerpts for your Astro blog - directly from your Markdown files! 💎
+⭐ An Astro component that renders post excerpts for your Astro blog - directly from your Markdown files. Astro v2 collections are supported as well! 💎
 </p>
 
 <br>
@@ -63,7 +63,7 @@ const { post } = Astro.props
 
 <br>
 
-> **NOTE**: if you get a build error _"unknown file extension \".astro\" for @igor.dvlpr/astro-post-excerpt"_, you'll need to update your [`astro.config.mjs`](https://docs.astro.build/en/guides/configuring-astro/) file and add the following property:
+> ❗ **NOTE**: if you get a build error _"unknown file extension \".astro\" for @igor.dvlpr/astro-post-excerpt"_, you'll need to update your [`astro.config.mjs`](https://docs.astro.build/en/guides/configuring-astro/) file and add the following property:
 
 ```js
 vite: {
@@ -74,6 +74,18 @@ vite: {
 ```
 
 See [#3820](https://github.com/withastro/astro/issues/3820) for more information.
+
+<br>
+
+If you have migrated your Astro site to v2+ you can now use Collections for your posts loop. This component works with both v2+ and versions prior v2.
+
+<br>
+
+If you're upgrading this component while keeping your Astro installation <2, everything should work as expected since the introduced changes are backwards-compatible.
+
+<br>
+
+In case of an issue, submit it on the component's [Issues](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/new) page. You should provide a concise explanation of the issue you're facing and sample code - if applicable.
 
 <br>
 
@@ -217,6 +229,10 @@ Possible values:
 <br>
 
 If this prop is not valid, a warning will be output to the console.
+
+<br>
+
+> ❗ Note: due to the underlying changes in Astro v2+, posts are retrieved as Markdown only, thus, the options `PropRenderer.Html` and `PropRenderer.Hybrid` will yield the same result in Astro v2+, i.e. the option `PropRenderer.Html` will behave as `PropRenderer.Hybrid` since there are no HTML tags to render, only HTML entities. Astro <2 is unaffected by this.
 
 <br>
 
