@@ -99,7 +99,11 @@ post: AstroMarkdownFile | AstroCollectionEntry
 
 **required** , represents the post whose excerpt you want to generate and render. You should insert this component inside your posts loop:
 
-- for `Astro >=2`, obtained via [`getCollection()`](https://docs.astro.build/en/reference/api-reference/#getcollection) - for posts loop and [`getEntryBySlug()`](https://docs.astro.build/en/reference/api-reference/#getentrybyslug) - for single posts retrival,
+- for `Astro >=2`, obtained via:
+
+  - [`getCollection()`](https://docs.astro.build/en/reference/api-reference/#getcollection)- for posts loop,
+
+  - [`getEntryBySlug()`](https://docs.astro.build/en/reference/api-reference/#getentrybyslug) - for single posts retrival,
 
 - for `Astro <2`, obtained via [`Astro.glob()`](https://docs.astro.build/en/reference/api-reference/#astroglob).
 
