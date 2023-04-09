@@ -43,10 +43,10 @@
 		"@igor.dvlpr/strip-html-headings": "^1.0.0"
 	},
 	"devDependencies": {
-		"astro": "^1.9.2",
+		"astro": "^2.2.0",
 		"@types/node": "^16.0.0"
 	},
 	"peerDependencies": {
-		"astro": "^1.9.2"
+		"astro": "^2.2.0"
 	}
 }
