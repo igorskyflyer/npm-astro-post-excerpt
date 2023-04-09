@@ -2,7 +2,8 @@
 import { getCollection } from 'astro:content'
 import PostExcerpt, { PropHeadings, PropRenderer } from "@igor.dvlpr/astro-post-excerpt";
 
-const posts = await getCollection('blog')
+const posts = await Astro.glob('../content/blog/*.md')
+const postsV2 = await getCollection('blog')
 ---
 
 <!DOCTYPE html>
@@ -11,8 +12,15 @@ const posts = await getCollection('blog')
     <meta charset="UTF-8" />
   </head>
   <body>
-    {posts.map((post) =>
-		<PostExcerpt post={post} words={14} headings={PropHeadings.None} smartEllipsis={false} renderer={PropRenderer.Hybrid} />
+		<h2>V1</h2>
+		{posts.map((post) =>
+			<PostExcerpt post={post} words={14} headings={PropHeadings.None} smartEllipsis={false} renderer={PropRenderer.Text} />
+			<br>
+			<br>
+			)}
+		<h2>V2</h2>
+    {postsV2.map((post) =>
+			<PostExcerpt post={post} words={14} headings={PropHeadings.None} smartEllipsis={false} renderer={PropRenderer.Text} />
 		<br>
 		<br>
 		)}
