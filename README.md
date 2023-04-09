@@ -82,12 +82,20 @@ See [#3820](https://github.com/withastro/astro/issues/3820) for more information
 ### post
 
 ```ts
-post: MarkdownInstance<Record<string, any>>
+post: AstroMarkdownFile | AstroCollectionEntry
 ```
 
-**required** , represents the post whose excerpt you want to generate and render, usually obtained via [`Astro.glob()`](https://docs.astro.build/en/reference/api-reference/#astroglob), thus, you should insert this component inside your posts loop, see [`Astro API`](https://docs.astro.build/en/reference/api-reference/) for more info.
+**required** , represents the post whose excerpt you want to generate and render. You should insert this component inside your posts loop:
+
+- for `Astro >=2`, obtained via [`getCollection()`](https://docs.astro.build/en/reference/api-reference/#getcollection) - for posts loop and [`getEntryBySlug()`](https://docs.astro.build/en/reference/api-reference/#getentrybyslug) - for single posts retrival,
+
+- for `Astro <2`, obtained via [`Astro.glob()`](https://docs.astro.build/en/reference/api-reference/#astroglob).
 
 If this prop is not supplied or not valid, the component will throw an error.
+
+<br>
+
+Types `AstroMarkdownFile` and `AstroCollectionEntry`are artificial and they correspond to `MarkdownInstance<Record<string, any>>` and `CollectionEntry<T>` respectfully.
 
 <br>
 
