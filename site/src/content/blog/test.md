@@ -1,5 +1,4 @@
 ---
-layout: ../layouts/post.astro
 title: Test 🙅🏻‍♂️
 publishDate: 2022-09-13 04:14
 tag: changelog
