@@ -1,5 +1,4 @@
 ---
-layout: ../layouts/post.astro
 title: Build an HTML element creation utility ⚡
 publishDate: 2022-09-08 02:50
 tag: js,javascript,html,tutorial
