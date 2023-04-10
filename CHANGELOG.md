@@ -20,6 +20,28 @@
 
 <br>
 
+## 🧐 Migration from 1.x to 2.x FAQs
+
+**Q**: Can I not upgrade Astro?  
+**A**: Yes but it's not **_recommended_**.  
+
+**Q**: Can I upgrade `PostExcerpt` but not Astro?  
+**A**: Yes, all changes and new features are backwards-compatible.  
+
+**Q**: Can I upgrade Astro but not `PostExcerpt`?  
+**A**: Look at the first answer.  
+
+**Q**: How do I upgrade Astro and migrate to v2?  
+**A**: Migrate your Astro project by going through the [official migration guide](https://docs.astro.build/en/guides/upgrade-to/v2/).  
+
+**Q**: What do I need to do if I upgrade `PostExcerpt` but not Astro too?  
+**A**: Nothing. Nada.  
+
+**Q**: Okay, I want to upgrade both. Is there some reference code?  
+**A**: Sure, take a look at this component's testing environment, in particular the [index page](https://github.com/igorskyflyer/npm-astro-post-excerpt/blob/main/site/src/pages/index.astro), which contains the post loops for Astro v\<2 and Astro v\>=2.   
+
+<br>
+
 ## 1.3.2 - 06-Apr-2023
 
 - dev: improve IntelliSense
