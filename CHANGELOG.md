@@ -22,8 +22,8 @@
 
 ## 🧐 Migration from 1.x to 2.x FAQs
 
-**Q**: Can I not upgrade Astro?  
-**A**: Yes but it's not **_recommended_**.  
+**Q**: Can I _NOT_ upgrade Astro?  
+**A**: Yes, but it's not **_recommended_**.  
 
 **Q**: Can I upgrade `PostExcerpt` but not Astro?  
 **A**: Yes, all changes and new features are backwards-compatible.  
