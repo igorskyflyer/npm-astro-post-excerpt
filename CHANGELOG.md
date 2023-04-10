@@ -37,7 +37,10 @@
 **Q**: What do I need to do if I upgrade `PostExcerpt` but not Astro too?  
 **A**: Nothing. Nada.  
 
-**Q**: Okay, I want to upgrade both. Is there some reference code?  
+**Q**: Can I use Collections in Astro without upgrading `PostExcerpt`?  
+**A**: No, Collections support is a new feature of `PostExcerpt v>=2.x.x`.  
+
+**Q**: Okay, I want to upgrade both. Is there some reference code? 🤓  
 **A**: Sure, take a look at this component's testing environment, in particular the [index page](https://github.com/igorskyflyer/npm-astro-post-excerpt/blob/main/site/src/pages/index.astro), which contains the post loops for Astro v\<2 and Astro v\>=2.   
 
 <br>
