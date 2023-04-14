@@ -10,6 +10,12 @@
 
 <br>
 
+<div align="center">
+ <img alt="npm" src="https://img.shields.io/npm/dm/@igor.dvlpr/astro-post-excerpt?style=flat-square">
+</div>
+
+<br>
+
 <blockquote align="center">
 Now featured on Astro's official <a href="https://astro.build/integrations?search=igor.dvlpr" target="_blank">Integrations library</a> 😍
 </blockquote>
