@@ -7,3 +7,4 @@ site/** -linguist-documentation
 *.json  -linguist-detectable
 *.md    -linguist-detectable
 *.svg   -linguist-detectable
+/.gitattributes -linguist-detectable
