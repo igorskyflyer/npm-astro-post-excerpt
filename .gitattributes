@@ -1,6 +1,5 @@
 *       text=auto
 
-site/** linguist-detectable
 site/** -linguist-documentation
 
 *.json  -linguist-detectable
