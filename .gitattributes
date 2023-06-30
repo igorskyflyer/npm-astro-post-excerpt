@@ -1,10 +1,7 @@
 *       text=auto
 
-*       linguist-detectable
-site/** linguist-detestable
 site/** -linguist-documentation
 
 *.json  -linguist-detectable
 *.md    -linguist-detectable
 *.svg   -linguist-detectable
-/.gitattributes -linguist-detectable
