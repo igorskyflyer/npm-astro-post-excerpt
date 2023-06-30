@@ -15,7 +15,7 @@ const postsV2 = await getCollection('blog')
 		<div style="display: inline-block; width: 49%; padding: 0; margin: 0;">
 		<h2>V1</h2>
 		{posts.map((post) =>
-			<PostExcerpt post={post} words={14} smartEllipsis={false} headings={PropHeadings.None} renderer={PropRenderer.Hybrid} />
+			<PostExcerpt post={post} words={14} smartEllipsis={true} headings={PropHeadings.None} renderer={PropRenderer.Hybrid} />
 			<br>
 			<br>
 			)}
