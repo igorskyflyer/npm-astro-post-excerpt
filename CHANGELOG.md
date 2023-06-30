@@ -4,6 +4,12 @@
 
 <br>
 
+## 2.0.2 - 30-Jun-2023
+
+- fix: upgrade dependencies, fixes multiple vulnerabilities
+
+<br>
+
 ## 2.0.1 - 09-Apr-2023
 
 - fix: peer dependency install error ([#32](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/32))
