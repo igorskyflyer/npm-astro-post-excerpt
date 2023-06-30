@@ -7,6 +7,8 @@
 ## 2.0.2 - 30-Jun-2023
 
 - fix: upgrade dependencies, fixes multiple vulnerabilities
+- dev: add missing types
+- fix: better handle last character for smartEllipsis
 
 <br>
 
