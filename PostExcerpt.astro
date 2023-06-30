@@ -191,12 +191,12 @@ if (addEllipsis) {
 		if (smartEllipsis) {
 			const lastChar: string | undefined = postExcerpt.at(-1)
 
-			if (lastChar && punctuationSymbols.includes(lastChar)) {
-				return
+			if (lastChar && !punctuationSymbols.includes(lastChar)) {
+				postExcerpt += ellipsis
 			}
+		} else {
+			postExcerpt += ellipsis
 		}
-
-		postExcerpt += ellipsis
 	}
 }
 ---
