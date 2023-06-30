@@ -81,8 +81,8 @@ function isV2(post: any): boolean {
 	return typeof post['body'] === 'string'
 }
 
-const symbolEllipsis = '…'
-const punctuationSymbols = ['.', ',', '?', '!', ';', symbolEllipsis]
+const symbolEllipsis: string = '…'
+const punctuationSymbols: string[] = ['.', ',', '?', '!', ';', symbolEllipsis]
 
 let {
 	post,
@@ -94,7 +94,7 @@ let {
 	headings = PropHeadings.Intact,
 	renderer = PropRenderer.Text,
 } = Astro.props as Props
-let postExcerpt = ''
+let postExcerpt: string = ''
 
 if (!post || (!isPriorV2(post) && !isV2(post))) {
 	throw new TypeError('The required prop post is not valid, aborting now.')
@@ -185,11 +185,11 @@ if (maxLength > 0) {
 }
 
 if (addEllipsis) {
-	const postLength = postExcerpt.length
+	const postLength: number = postExcerpt.length
 
 	if (postLength > 0) {
 		if (smartEllipsis) {
-			const lastChar = postExcerpt.at(postExcerpt.length - 1)
+			const lastChar: string = postExcerpt.at(postExcerpt.length - 1)
 
 			if (!punctuationSymbols.includes(lastChar)) {
 				postExcerpt += ellipsis
