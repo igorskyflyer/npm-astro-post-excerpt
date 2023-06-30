@@ -189,7 +189,7 @@ if (addEllipsis) {
 
 	if (postLength > 0) {
 		if (smartEllipsis) {
-			const lastChar: string = postExcerpt.at(postExcerpt.length - 1)
+			const lastChar: string = postExcerpt.at(-1)
 
 			if (!punctuationSymbols.includes(lastChar)) {
 				postExcerpt += ellipsis
