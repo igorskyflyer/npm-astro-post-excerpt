@@ -44,7 +44,7 @@
 	},
 	"devDependencies": {
 		"@types/node": "^16.0.0",
-		"astro": "^2.7.2",
+		"astro": "^2.8.2",
 		"prettier": "^2.8.8"
 	},
 	"peerDependencies": {
