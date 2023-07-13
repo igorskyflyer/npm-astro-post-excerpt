@@ -4,6 +4,12 @@
 
 <br>
 
+## 2.0.3 - 13-Jul-2023
+
+- security update: fix vulnerability, upgrade dependencies
+
+<br>
+
 ## 2.0.2 - 30-Jun-2023
 
 - fix: upgrade dependencies, fixes multiple vulnerabilities
