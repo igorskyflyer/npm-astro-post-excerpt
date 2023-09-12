@@ -23,9 +23,9 @@
 
 <p align="right"><em>30-Jun-2023</em></p>
 
-- fix: upgrade dependencies, fixes multiple vulnerabilities
-- dev: add missing types
-- fix: better handle last character for smartEllipsis
+- **✅ fix**: upgrade dependencies, fixes multiple vulnerabilities
+- **💻 dev**: add missing types
+- **✅ fix**: better handle last character for smartEllipsis
 
 <br>
 
@@ -33,7 +33,7 @@
 
 <p align="right"><em>09-Apr-2023</em></p>
 
-- fix: peer dependency install error ([#32](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/32))
+- **✅ fix**: peer dependency install error ([#32](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/32))
 
 <br>
 
@@ -41,11 +41,11 @@
 
 <p align="right"><em>09-Apr-2023</em></p>
 
-- feat: add support for Astro v2 [Collections](https://docs.astro.build/en/guides/content-collections/)
-- dev: migrate to Astro v2, check it out for breaking changes:
+- **🪅 feat**: add support for Astro v2 [Collections](https://docs.astro.build/en/guides/content-collections/)
+- **💻 dev**: migrate to Astro v2, check it out for breaking changes:
   - migrate using [Astro migration to v2](https://docs.astro.build/en/guides/upgrade-to/v2/)
-- feat: make the component backwards-compatible
-- dev: upgrade to Astro v2.2.0
+- **🪅 feat**: make the component backwards-compatible
+- **💻 dev**: upgrade to Astro v2.2.0
 
 <br>
 
@@ -78,7 +78,7 @@
 
 <p align="right"><em>06-Apr-2023</em></p>
 
-- dev: improve IntelliSense
+- **💻 dev**: improve IntelliSense
 
 <br>
 
@@ -94,7 +94,7 @@
   - stripping of HTML headings' code,
   - extracting of text content from HTML headings
 - moved to TypeScript
-- dev: fix missing typings
+- **💻 dev**: fix missing typings
 - detect ellipsis symbol in [smartEllipsis](https://github.com/igorskyflyer/npm-astro-post-excerpt#smartellipsis)
 - fix `trim()` sometimes not being applied
 
@@ -106,10 +106,10 @@
 
 - feature: preserve or strip post headings in the rendered excerpt ([#12](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/12))
   - via [@igor.dvlpr/strip-headings](https://www.npmjs.com/package/@igor.dvlpr/strip-headings),
-- fix: broken integrations link ([#16](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/16)),
-- dev: upgrade dependencies,
-- dev: make the test site public
-- dev: update author link ([#17](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/17))
+- **✅ fix**: broken integrations link ([#16](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/16)),
+- **💻 dev**: upgrade dependencies,
+- **💻 dev**: make the test site public
+- **💻 dev**: update author link ([#17](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/17))
 
 <br>
 
@@ -149,8 +149,8 @@
 
 <p align="right"><em>12-Sep-2022</em></p>
 
-- throw an error instead of logging it when required prop [`post`](https://github.com/igorskyflyer/npm-astro-post-excerpt#post) is missing or not valid,
-- maintenance
+- **💻 dev**: throw an error instead of logging it when required prop [`post`](https://github.com/igorskyflyer/npm-astro-post-excerpt#post) is missing or not valid,
+- **💻 dev**: security fixes
 
 <br>
 
@@ -158,8 +158,8 @@
 
 <p align="right"><em>12-Sep-2022</em></p>
 
-- added an explanation how to fix a common Astro build error caused by Vite,
-- maintenance
+- **📜 docs**: add an explanation how to fix a common Astro build error caused by Vite,
+- **💻 dev**: security fixes
 
 <br>
 
@@ -167,4 +167,4 @@
 
 <p align="right"><em>11-Sep-2022</em></p>
 
-- initial release
+- **🚀 launch**: initial release
