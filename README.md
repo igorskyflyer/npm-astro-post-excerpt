@@ -22,6 +22,15 @@ Now featured on Astro's official <a href="https://astro.build/integrations?searc
 
 <br>
 
+<p align="center">
+<img src="https://raw.githubusercontent.com/igorskyflyer/npm-astro-post-excerpt/main/assets/demo.png" alt="Generated post excerpt">
+<br>
+<sub><code>&lt;PostExcerpt /&gt;</code> component generated excerpt</sub>
+</p>
+
+<br>
+<br>
+
 <div align="center">
 	<blockquote>
 		<h4>💖 Support further development</h4>
@@ -40,15 +49,6 @@ Now featured on Astro's official <a href="https://astro.build/integrations?searc
 </div>
 
 <br>
-<br>
-<br>
-
-<p align="center">
-<img src="https://raw.githubusercontent.com/igorskyflyer/npm-astro-post-excerpt/main/assets/demo.png" alt="Generated post excerpt">
-<br>
-<sub><code>&lt;PostExcerpt /&gt;</code> component generated excerpt</sub>
-</p>
-
 <br>
 
 ## 🕵🏼‍♂️ Usage
