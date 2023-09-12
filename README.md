@@ -5,7 +5,8 @@
 <h1 align="center">Post Excerpt component for 🚀 Astro</h1>
 
 <p align="center">
-⭐ An Astro component that renders post excerpts for your Astro blog - directly from your Markdown files. Astro v2 collections are supported as well! 💎
+⭐ An Astro component that renders post excerpts for your Astro blog - directly from your Markdown files. Astro v2+ collections are supported as well! 💎
+<strong>Works with all 3 major versions of Astro!</strong>
 </p>
 
 <br>
