@@ -4,6 +4,13 @@
 
 <br>
 
+## v2.1.0
+
+- **🪅 feat**: upgrade and test with `Astro` **`v3`**
+- **💻 dev**: `<PostExcerpt />` now comes with its own custom-built test suite and runner! (naive implementation 😳)
+
+<br>
+
 ## v2.0.3
 
 <p align="right"><em>13-Jul-2023</em></p>
