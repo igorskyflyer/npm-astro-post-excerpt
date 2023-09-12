@@ -88,10 +88,10 @@
 
 - feature: add an HTML render ([#18](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/18))
 - add [@igor.dvlpr/strip-html](https://www.npmjs.com/package/@igor.dvlpr/strip-html) which brings:
-  - stripping of HTML code,
+  - stripping of HTML code
   - extracting of text content from HTML code
 - add [@igor.dvlpr/strip-html-headings](https://www.npmjs.com/package/@igor.dvlpr/strip-html-headings) which brings:
-  - stripping of HTML headings' code,
+  - stripping of HTML headings' code
   - extracting of text content from HTML headings
 - moved to TypeScript
 - **💻 dev**: fix missing typings
@@ -105,9 +105,9 @@
 <p align="right"><em>29-Mar-2023</em></p>
 
 - feature: preserve or strip post headings in the rendered excerpt ([#12](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/12))
-  - via [@igor.dvlpr/strip-headings](https://www.npmjs.com/package/@igor.dvlpr/strip-headings),
-- **✅ fix**: broken integrations link ([#16](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/16)),
-- **💻 dev**: upgrade dependencies,
+  - via [@igor.dvlpr/strip-headings](https://www.npmjs.com/package/@igor.dvlpr/strip-headings)
+- **✅ fix**: broken integrations link ([#16](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/16))
+- **💻 dev**: upgrade dependencies
 - **💻 dev**: make the test site public
 - **💻 dev**: update author link ([#17](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/17))
 
@@ -117,7 +117,7 @@
 
 <p align="right"><em>16-Dec-2022</em></p>
 
-- upgraded dependencies,
+- upgraded dependencies
 - minor README fixes
 
 <br>
@@ -126,12 +126,12 @@
 
 <p align="right"><em>02-Dec-2022</em></p>
 
-- fixed [`maxLength`](https://github.com/igorskyflyer/npm-astro-post-excerpt#maxlength) issue ([#10](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/10)),
-- added smartEllipsis,
-- added custom ellipsis support,
-- use native _\<post\>_`.rawContent()` function,
-- updated JSDocs,
-- refactored code,
+- fixed [`maxLength`](https://github.com/igorskyflyer/npm-astro-post-excerpt#maxlength) issue ([#10](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/10))
+- added smartEllipsis
+- added custom ellipsis support
+- use native _\<post\>_`.rawContent()` function
+- updated JSDocs
+- refactored code
 - maintenance
 
 <br>
@@ -140,8 +140,8 @@
 
 <p align="right"><em>13-Oct-2022</em></p>
 
-- maintenance,
-- added testing environment
+- **💻 dev**: add testing environment
+- **💻 dev**: maintenance
 
 <br>
 
@@ -149,7 +149,7 @@
 
 <p align="right"><em>12-Sep-2022</em></p>
 
-- **💻 dev**: throw an error instead of logging it when required prop [`post`](https://github.com/igorskyflyer/npm-astro-post-excerpt#post) is missing or not valid,
+- **💻 dev**: throw an error instead of logging it when required prop [`post`](https://github.com/igorskyflyer/npm-astro-post-excerpt#post) is missing or not valid
 - **💻 dev**: security fixes
 
 <br>
@@ -158,7 +158,7 @@
 
 <p align="right"><em>12-Sep-2022</em></p>
 
-- **📜 docs**: add an explanation how to fix a common Astro build error caused by Vite,
+- **📜 docs**: add an explanation how to fix a common Astro build error caused by Vite
 - **💻 dev**: security fixes
 
 <br>
