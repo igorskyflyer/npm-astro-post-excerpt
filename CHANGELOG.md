@@ -15,7 +15,7 @@
 
 <p align="right"><em>13-Jul-2023</em></p>
 
-- security update: fix vulnerability, upgrade dependencies
+- **💻 dev**: fix vulnerability, upgrade dependencies
 
 <br>
 
