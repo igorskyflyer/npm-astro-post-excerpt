@@ -1,33 +1,102 @@
 ---
+import PostExcerpt, {
+  PropHeadings,
+  PropRenderer,
+} from '@igor.dvlpr/astro-post-excerpt'
 import { getCollection } from 'astro:content'
-import PostExcerpt, { PropHeadings, PropRenderer } from "@igor.dvlpr/astro-post-excerpt";
 
-const posts = await Astro.glob('../content/blog/*.md')
-const postsV2 = await getCollection('blog')
+const postsV1 = await Astro.glob('../content/blog/*.md')
+const postsAfterV2 = await getCollection('blog')
+const postsCount = postsAfterV2.length
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="UTF-8" />
-		<link href="/favicon.svg" type="shortcut" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="test/ui.css" type="text/css" />
+    <script define:vars={{ postsCount }}>
+      window.runAstroTest = () => runTest(postsCount)
+    </script>
   </head>
   <body>
-		<div style="display: inline-block; width: 49%; padding: 0; margin: 0;">
-		<h2>V1</h2>
-		{posts.map((post) =>
-			<PostExcerpt post={post} words={14} smartEllipsis={true} headings={PropHeadings.None} addEllipsis={true} renderer={PropRenderer.Hybrid} />
-			<br>
-			<br>
-			)}
-			</div>
-			<div style="display: inline-block; width: 49%; padding: 0; margin: 0;">
-		<h2>V2</h2>
-    {postsV2.map((post) =>
-			<PostExcerpt post={post} words={14} smartEllipsis={true} headings={PropHeadings.None} addEllipsis={true} renderer={PropRenderer.Hybrid} />
-		<br>
-		<br>
-		)}
-		</div>
+    <main>
+      <div id="posts-v1" class="component-container">
+        <h2>V1</h2>&nbsp;&nbsp;<em>(legacy)</em>
+        {
+          postsV1.map((post) => (
+            <p class="post">
+              <PostExcerpt
+                post={post}
+                words={14}
+                smartEllipsis={true}
+                headings={PropHeadings.None}
+                addEllipsis={true}
+                renderer={PropRenderer.Hybrid}
+              />
+            </p>
+          ))
+        }
+      </div>
+      <div id="posts-after-v2" class="component-container">
+        <h2>V2 &amp; V3</h2>&nbsp;&nbsp;<em>(current)</em>
+        {
+          postsAfterV2.map((post) => (
+            <p class="post">
+              <PostExcerpt
+                post={post}
+                words={14}
+                smartEllipsis={true}
+                headings={PropHeadings.None}
+                addEllipsis={true}
+                renderer={PropRenderer.Hybrid}
+              />
+            </p>
+          ))
+        }
+      </div>
+
+      <div id="test-container">
+        <p id="test-info">
+          This test suite ensures compatibility between major versions of Astro.
+          It does so by comparing the content rendered by this component. Tests
+          are artificially slowed down for demonstration purposes.
+        </p>
+
+        <section id="test-buttons">
+          <button
+            id="btn-test"
+            onclick="runAstroTest();"
+            title="Run component tests">Run tests</button
+          >
+          <button
+            id="btn-test-reload"
+            class="util-hide util-fake-disabled"
+            onclick="location.reload();"
+            title="Reload page">🔄️</button
+          >
+        </section>
+        <section id="test-result">
+          <progress id="test-progress" class="util-hide" value="0" max="100"
+          ></progress>
+
+          <p class="util-hide">✅ Query posts V1</p>
+          <p class="util-hide">✅ Query posts V2+</p>
+          <p class="util-hide">✅ Query posts count V1</p>
+          <p class="util-hide">✅ Query posts count V2+</p>
+          <p class="util-hide">✅ Matching posts count</p>
+          <p id="test-posts" class="util-hide">✅ Posts: 0/0 content checked</p>
+
+          <p id="test-error" class="util-hide"></p>
+        </section>
+      </div>
+    </main>
+    <script src="/test/suite-runner.js" type="text/javascript"></script>
   </body>
 </html>
