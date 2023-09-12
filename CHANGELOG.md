@@ -86,17 +86,17 @@
 
 <p align="right"><em>05-Apr-2023</em></p>
 
-- feature: add an HTML render ([#18](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/18))
-- add [@igor.dvlpr/strip-html](https://www.npmjs.com/package/@igor.dvlpr/strip-html) which brings:
+- **🪅 feat**: add an HTML render ([#18](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/18))
+- **🪅 feat**: add [@igor.dvlpr/strip-html](https://www.npmjs.com/package/@igor.dvlpr/strip-html) which brings:
   - stripping of HTML code
   - extracting of text content from HTML code
-- add [@igor.dvlpr/strip-html-headings](https://www.npmjs.com/package/@igor.dvlpr/strip-html-headings) which brings:
+- **🪅 feat**: add [@igor.dvlpr/strip-html-headings](https://www.npmjs.com/package/@igor.dvlpr/strip-html-headings) which brings:
   - stripping of HTML headings' code
   - extracting of text content from HTML headings
-- moved to TypeScript
+- **🪅 feat**: detect ellipsis symbol in [smartEllipsis](https://github.com/igorskyflyer/npm-astro-post-excerpt#smartellipsis)
+- **✅ fix**: fix `trim()` sometimes not being applied
+- **💻 dev**: move to TypeScript
 - **💻 dev**: fix missing typings
-- detect ellipsis symbol in [smartEllipsis](https://github.com/igorskyflyer/npm-astro-post-excerpt#smartellipsis)
-- fix `trim()` sometimes not being applied
 
 <br>
 
@@ -104,7 +104,7 @@
 
 <p align="right"><em>29-Mar-2023</em></p>
 
-- feature: preserve or strip post headings in the rendered excerpt ([#12](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/12))
+- **🪅 feat**: preserve or strip post headings in the rendered excerpt ([#12](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/12))
   - via [@igor.dvlpr/strip-headings](https://www.npmjs.com/package/@igor.dvlpr/strip-headings)
 - **✅ fix**: broken integrations link ([#16](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/16))
 - **💻 dev**: upgrade dependencies
