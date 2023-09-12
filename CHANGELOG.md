@@ -24,8 +24,8 @@
 <p align="right"><em>30-Jun-2023</em></p>
 
 - **✅ fix**: upgrade dependencies, fixes multiple vulnerabilities
-- **💻 dev**: add missing types
 - **✅ fix**: better handle last character for smartEllipsis
+- **💻 dev**: add missing types
 
 <br>
 
@@ -42,9 +42,9 @@
 <p align="right"><em>09-Apr-2023</em></p>
 
 - **🪅 feat**: add support for Astro v2 [Collections](https://docs.astro.build/en/guides/content-collections/)
+- **🪅 feat**: make the component backwards-compatible
 - **💻 dev**: migrate to Astro v2, check it out for breaking changes:
   - migrate using [Astro migration to v2](https://docs.astro.build/en/guides/upgrade-to/v2/)
-- **🪅 feat**: make the component backwards-compatible
 - **💻 dev**: upgrade to Astro v2.2.0
 
 <br>
@@ -158,8 +158,8 @@
 
 <p align="right"><em>12-Sep-2022</em></p>
 
-- **📜 docs**: add an explanation how to fix a common Astro build error caused by Vite
 - **💻 dev**: security fixes
+- **📜 docs**: add an explanation how to fix a common Astro build error caused by Vite
 
 <br>
 
