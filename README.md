@@ -6,6 +6,7 @@
 
 <p align="center">
 ⭐ An Astro component that renders post excerpts for your Astro blog - directly from your Markdown files. Astro v2+ collections are supported as well! 💎
+<br>
 <strong>Works with all 3 major versions of Astro!</strong>
 </p>
 
