@@ -220,11 +220,11 @@ headings?: PropHeadings
 
 Possible values:
 
-- `Intact` - leave the headings intact,
+- `PropHeadings.Intact` - leave the headings intact,
 
-- `TextOnly` - remove Markdown code but keep the headings text,
+- `PropHeadings.TextOnly` - remove Markdown code but keep the headings text,
 
-- `None` - remove the headings completely.
+- `PropHeadings.None` - remove the headings completely.
 
 <br>
 
@@ -244,11 +244,11 @@ renderer?: PropRenderer
 
 Possible values:
 
-- `Text` - render post excerpts as simple text, no HTML entities supported,
+- `PropRenderer.Text` - render post excerpts as simple text, no HTML entities supported,
 
-- `Html` - render post excerpts as HTML, HTML entities supported,
+- `PropRenderer.Html` - render post excerpts as HTML, HTML entities supported,
 
-- `Hybrid` - render post excerpts as simple text but allow HTML entities as well.
+- `PropRenderer.Hybrid` - render post excerpts as simple text but allow HTML entities as well.
 
 <br>
 
