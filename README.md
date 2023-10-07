@@ -220,7 +220,7 @@ headings?: PropHeadings
 
 Possible values:
 
-- `PropHeadings.Intact` - leave the headings intact,
+- **`PropHeadings.Intact`** - leave the headings intact,
 
 - `PropHeadings.TextOnly` - remove Markdown code but keep the headings text,
 
