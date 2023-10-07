@@ -244,7 +244,7 @@ renderer?: PropRenderer
 
 Possible values:
 
-- `PropRenderer.Text` - render post excerpts as simple text, no HTML entities supported,
+- **`PropRenderer.Text`** - render post excerpts as simple text, no HTML entities supported,
 
 - `PropRenderer.Html` - render post excerpts as HTML, HTML entities supported,
 
