@@ -224,7 +224,7 @@ Possible values:
 
 - **`PropHeadings.TextOnly`** - remove Markdown code but keep the headings text,
 
-- `PropHeadings.None` - remove the headings completely.
+- **`PropHeadings.None`** - remove the headings completely.
 
 <br>
 
