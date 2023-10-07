@@ -248,7 +248,7 @@ Possible values:
 
 - `PropRenderer.Html` - render post excerpts as HTML, HTML entities supported,
 
-- `PropRenderer.Hybrid` - render post excerpts as simple text but allow HTML entities as well.
+- **`PropRenderer.Hybrid`** - render post excerpts as simple text but allow HTML entities as well.
 
 <br>
 
