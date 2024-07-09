@@ -4,11 +4,20 @@
 
 <br>
 
+## v3.0.0
+
+- **💻 dev**: upgrade to `Astro` **`v4`**
+- **💻 dev**: set the Node requirement to `>=20`
+
+<br>
+<br>
+
 ## v2.1.0
 
 - **🪅 feat**: upgrade and test with `Astro` **`v3`**
 - **💻 dev**: `<PostExcerpt />` now comes with its own custom-built test suite and runner! (naive implementation 😳)
 
+<br>
 <br>
 
 ## v2.0.3
@@ -17,6 +26,7 @@
 
 - **💻 dev**: fix vulnerability, upgrade dependencies
 
+<br>
 <br>
 
 ## v2.0.2
@@ -28,6 +38,7 @@
 - **💻 dev**: add missing types
 
 <br>
+<br>
 
 ## v2.0.1
 
@@ -35,6 +46,7 @@
 
 - **✅ fix**: peer dependency install error ([#32](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/32))
 
+<br>
 <br>
 
 ## v2.0.0
@@ -47,6 +59,7 @@
   - migrate using [Astro migration to v2](https://docs.astro.build/en/guides/upgrade-to/v2/)
 - **💻 dev**: upgrade to Astro v2.2.0
 
+<br>
 <br>
 
 ## 🧐 Migration from 1.x to 2.x FAQs
@@ -73,6 +86,7 @@
 **A**: Sure, take a look at this component's testing environment, in particular the [index page](https://github.com/igorskyflyer/npm-astro-post-excerpt/blob/main/site/src/pages/index.astro), which contains the post loops for Astro v\<2 and Astro v\>=2.
 
 <br>
+<br>
 
 ## v1.3.2
 
@@ -80,6 +94,7 @@
 
 - **💻 dev**: improve IntelliSense
 
+<br>
 <br>
 
 ## v1.3.1
@@ -99,6 +114,7 @@
 - **💻 dev**: fix missing typings
 
 <br>
+<br>
 
 ## v1.2.3
 
@@ -112,6 +128,7 @@
 - **💻 dev**: update author link ([#17](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/17))
 
 <br>
+<br>
 
 ## v1.1.1
 
@@ -120,6 +137,7 @@
 - **💻 dev**: upgrade dependencies
 - **📜 docs**: minor README fixes
 
+<br>
 <br>
 
 ## v1.1.0
@@ -135,6 +153,7 @@
 - **📜 docs**: update JSDocs
 
 <br>
+<br>
 
 ## v1.0.3
 
@@ -143,6 +162,7 @@
 - **💻 dev**: add testing environment
 - **💻 dev**: maintenance
 
+<br>
 <br>
 
 ## v1.0.2
@@ -153,6 +173,7 @@
 - **💻 dev**: security fixes
 
 <br>
+<br>
 
 ## v1.0.1
 
@@ -161,6 +182,7 @@
 - **💻 dev**: security fixes
 - **📜 docs**: add an explanation how to fix a common Astro build error caused by Vite
 
+<br>
 <br>
 
 ## v1.0.0
