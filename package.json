@@ -1,6 +1,6 @@
 {
 	"name": "@igor.dvlpr/astro-post-excerpt",
-	"version": "2.1.0",
+	"version": "3.0.0",
 	"description": "⭐ An Astro component that renders post excerpts for your Astro blog - directly from your Markdown files. Astro v2 collections are supported as well! 💎",
 	"type": "module",
 	"files": [
@@ -43,9 +43,9 @@
 		"@igor.dvlpr/strip-html-headings": "^1.0.0"
 	},
 	"devDependencies": {
-		"@types/node": "^16.0.0",
-		"astro": "^3.0.12",
-		"prettier": "^3.0.3"
+		"@types/node": "^20.14.10",
+		"astro": "^4.11.5",
+		"prettier": "^3.3.2"
 	},
 	"peerDependencies": {
 		"astro": ">=1.0.0"
