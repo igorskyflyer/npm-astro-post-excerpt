@@ -6,6 +6,9 @@
 
 ## v3.0.0
 
+- **❌ breaking**: property `headings`: `PropHeadings` has been removed completely, headings are now automatically and **ALWAYS** removed
+- **❌ breaking**: property `renderer`: `PropRenderer` has been removed completely, only text is rendered with HTML entities support **ALWAYS** enabled
+- **🪅 feat**: MDX support is added and enabled by default
 - **💻 dev**: upgrade to `Astro` **`v4`**
 - **💻 dev**: set the Node requirement to `>=20`
 
