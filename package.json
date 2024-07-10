@@ -38,9 +38,10 @@
 	},
 	"homepage": "https://github.com/igorskyflyer/npm-astro-post-excerpt#readme",
 	"dependencies": {
-		"@igor.dvlpr/strip-headings": "^1.0.1",
-		"@igor.dvlpr/strip-html": "^1.0.1",
-		"@igor.dvlpr/strip-html-headings": "^1.0.0"
+		"@igor.dvlpr/strip-yaml-front-matter": "^1.0.0",
+		"mdast-util-from-markdown": "^2.0.1",
+		"mdast-util-mdx": "^3.0.0",
+		"micromark-extension-mdxjs": "^3.0.0"
 	},
 	"devDependencies": {
 		"@types/node": "^20.14.10",
