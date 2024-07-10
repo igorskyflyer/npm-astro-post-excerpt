@@ -20,9 +20,7 @@ let {
 let postExcerpt: string = ''
 
 if (!post || (!isPriorV2(post) && !isV2(post) && !isMdx(post))) {
-  throw new TypeError(
-    `The required prop post is not valid, aborting now.\n Got: ${post}`
-  )
+  throw new TypeError('The required prop post is not valid, aborting now.')
 }
 
 if (typeof words !== 'number' || words < 0) {
