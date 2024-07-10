@@ -17,30 +17,14 @@
 
 <p align="right"><em>10-Jul-2024</em></p>
 
-- **✅ fix**: fix component import error
-
-<br>
-<br>
-
-## v3.0.1
-
-<p align="right"><em>10-Jul-2024</em></p>
-
-- **📜 docs**: change the description and documentation to match the new API (MDX support)
-
-<br>
-<br>
-
-## v3.0.0
-
-<p align="right"><em>10-Jul-2024</em></p>
-
 - **❌ breaking**: property `headings`: `PropHeadings` has been removed completely, headings are now automatically and **ALWAYS** removed
 - **❌ breaking**: property `renderer`: `PropRenderer` has been removed completely, only text is rendered with HTML entities support **ALWAYS** enabled
-- **✅ fix**: fix Markdown being rendered ([#41](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/41))
 - **🪅 feat**: MDX support is added and enabled by default
+- **✅ fix**: fix Markdown being rendered ([#41](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/41))
+- **✅ fix**: fix component import error
 - **💻 dev**: upgrade to `Astro` **`v4`**
 - **💻 dev**: set the Node requirement to `>=20`
+- **📜 docs**: change the description and documentation to match the new API (MDX support)
 
 <br>
 <br>
