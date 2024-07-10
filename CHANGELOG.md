@@ -10,6 +10,7 @@
 
 - **❌ breaking**: property `headings`: `PropHeadings` has been removed completely, headings are now automatically and **ALWAYS** removed
 - **❌ breaking**: property `renderer`: `PropRenderer` has been removed completely, only text is rendered with HTML entities support **ALWAYS** enabled
+- **✅ fix**: fix Markdown being rendered ([#41](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/41))
 - **🪅 feat**: MDX support is added and enabled by default
 - **💻 dev**: upgrade to `Astro` **`v4`**
 - **💻 dev**: set the Node requirement to `>=20`
