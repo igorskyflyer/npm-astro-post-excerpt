@@ -4,6 +4,15 @@
 
 <br>
 
+## v3.0.3
+
+<p align="right"><em>10-Jul-2024</em></p>
+
+- **💻 dev**: conform with installed Astro's Node engine version
+
+<br>
+<br>
+
 ## v3.0.2
 
 <p align="right"><em>10-Jul-2024</em></p>
