@@ -7,7 +7,7 @@
     "node": ">=20.0"
   },
   "files": [
-    "src",
+    "dist",
     "index.ts",
     "PostExcerpt.astro"
   ],
