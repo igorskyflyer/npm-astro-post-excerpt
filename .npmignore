@@ -2,3 +2,4 @@ assets/
 site/
 .github/
 CHANGELOG.md
+env.d.ts
