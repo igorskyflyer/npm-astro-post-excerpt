@@ -4,6 +4,15 @@
 
 <br>
 
+## v3.0.2
+
+<p align="right"><em>10-Jul-2024</em></p>
+
+- **✅ fix**: fix component import error
+
+<br>
+<br>
+
 ## v3.0.1
 
 <p align="right"><em>10-Jul-2024</em></p>
