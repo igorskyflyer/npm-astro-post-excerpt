@@ -7,7 +7,7 @@
 <p align="center">
 ⭐ An Astro component that renders post excerpts for your Astro blog - directly from your Markdown files. Astro v2+ collections are supported as well! 💎
 <br>
-<strong>Works with all 3 major versions of Astro!</strong>
+<strong>Works with all 4 major versions of Astro and MDX!</strong>
 </p>
 
 <br>
@@ -205,58 +205,6 @@ ellipsis?: string
 **optional**, controls the ellipsis string that should be appended to the post excerpt. Defaults to **"…"**.
 
 If this prop is not valid, a warning will be output to the console.
-
-<br>
-
-### headings
-
-```ts
-headings?: PropHeadings
-```
-
-**optional**, controls whether the leading post headings should be stripped or preserved. Defaults to "**PropHeadings.Intact**".
-
-<br>
-
-Possible values:
-
-- **`PropHeadings.Intact`** - leave the headings intact,
-
-- **`PropHeadings.TextOnly`** - remove Markdown code but keep the headings text,
-
-- **`PropHeadings.None`** - remove the headings completely.
-
-<br>
-
-If this prop is not valid, a warning will be output to the console.
-
-<br>
-
-### renderer
-
-```ts
-renderer?: PropRenderer
-```
-
-**optional**, controls the rendering of the post excerpt. Defaults to "**PropRenderer.Text**".
-
-<br>
-
-Possible values:
-
-- **`PropRenderer.Text`** - render post excerpts as simple text, no HTML entities supported,
-
-- **`PropRenderer.Html`** - render post excerpts as HTML, HTML entities supported,
-
-- **`PropRenderer.Hybrid`** - render post excerpts as simple text but allow HTML entities as well.
-
-<br>
-
-If this prop is not valid, a warning will be output to the console.
-
-<br>
-
-> ❗ Note: due to the underlying changes in Astro v2+, posts are retrieved as Markdown only, thus, the options `PropRenderer.Html` and `PropRenderer.Hybrid` will yield the same result in Astro v2+, i.e. the option `PropRenderer.Html` will behave as `PropRenderer.Hybrid` since there are no HTML tags to render, only HTML entities. Astro <2 is unaffected by this.
 
 <br>
 
