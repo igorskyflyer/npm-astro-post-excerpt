@@ -1,54 +1,58 @@
 {
-	"name": "@igor.dvlpr/astro-post-excerpt",
-	"version": "3.0.0",
-	"description": "⭐ An Astro component that renders post excerpts for your Astro blog - directly from your Markdown files. Astro v2 collections are supported as well! 💎",
-	"type": "module",
-	"files": [
-		"index.ts",
-		"PostExcerpt.astro"
-	],
-	"scripts": {
-		"pub": "npm publish --access public"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/igorskyflyer/npm-astro-post-excerpt.git"
-	},
-	"keywords": [
-		"astro-component",
-		"withastro",
-		"renderer",
-		"ui",
-		"astro",
-		"post",
-		"excerpt",
-		"summary",
-		"blog",
-		"component",
-		"jsx",
-		"article",
-		"igorskyflyer",
-		"igor.dvlpr"
-	],
-	"author": "Igor Dimitrijević <igor.dvlpr@gmail.com> (https://github.com/igorskyflyer)",
-	"license": "MIT",
-	"funding": "https://ko-fi.com/igorskyflyer",
-	"bugs": {
-		"url": "https://github.com/igorskyflyer/npm-astro-post-excerpt/issues"
-	},
-	"homepage": "https://github.com/igorskyflyer/npm-astro-post-excerpt#readme",
-	"dependencies": {
-		"@igor.dvlpr/strip-yaml-front-matter": "^1.0.0",
-		"mdast-util-from-markdown": "^2.0.1",
-		"mdast-util-mdx": "^3.0.0",
-		"micromark-extension-mdxjs": "^3.0.0"
-	},
-	"devDependencies": {
-		"@types/node": "^20.14.10",
-		"astro": "^4.11.5",
-		"prettier": "^3.3.2"
-	},
-	"peerDependencies": {
-		"astro": ">=1.0.0"
-	}
+  "name": "@igor.dvlpr/astro-post-excerpt",
+  "version": "3.0.0",
+  "description": "⭐ An Astro component that renders post excerpts for your Astro blog - directly from your Markdown files. Astro v2+ collections are supported as well! 💎",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0"
+  },
+  "files": [
+    "index.ts",
+    "PostExcerpt.astro"
+  ],
+  "module": "index.ts",
+  "scripts": {
+    "pub": "npm publish --access public"
+  },
+  "keywords": [
+    "astro-component",
+    "withastro",
+    "renderer",
+    "ui",
+    "astro",
+    "post",
+    "excerpt",
+    "summary",
+    "blog",
+    "component",
+    "jsx",
+    "article",
+    "igorskyflyer",
+    "igor.dvlpr"
+  ],
+  "license": "MIT",
+  "author": "Igor Dimitrijević <igor.dvlpr@gmail.com> (https://github.com/igorskyflyer)",
+  "funding": "https://ko-fi.com/igorskyflyer",
+  "homepage": "https://github.com/igorskyflyer/npm-astro-post-excerpt",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igorskyflyer/npm-astro-post-excerpt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/igorskyflyer/npm-astro-post-excerpt/issues"
+  },
+  "dependencies": {
+    "@igor.dvlpr/strip-yaml-front-matter": "^1.0.0",
+    "mdast-util-from-markdown": "^2.0.1",
+    "mdast-util-mdx": "^3.0.0",
+    "micromark-extension-mdxjs": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "astro": "^4.11.5",
+    "prettier": "^3.3.2"
+  },
+  "peerDependencies": {
+    "astro": ">=1.0.0"
+  }
 }
