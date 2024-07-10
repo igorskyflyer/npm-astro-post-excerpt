@@ -4,6 +4,15 @@
 
 <br>
 
+## v3.0.1
+
+<p align="right"><em>10-Jul-2024</em></p>
+
+- **📜 docs**: change the description and documentation to match the new API (MDX support)
+
+<br>
+<br>
+
 ## v3.0.0
 
 <p align="right"><em>10-Jul-2024</em></p>
