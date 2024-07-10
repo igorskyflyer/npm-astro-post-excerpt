@@ -1,10 +1,12 @@
-## 🤹🏼‍♂️ Changelog
+## 📒 Changelog
 
-### of [@igor.dvlpr/astro-post-excerpt](https://www.npmjs.com/package/@igor.dvlpr/astro-post-excerpt)
+### of [@igor.dvlpr/astro-post-excerpt](https://github.com/igorskyflyer/npm-astro-post-excerpt)
 
 <br>
 
 ## v3.0.0
+
+<p align="right"><em>10-Jul-2024</em></p>
 
 - **❌ breaking**: property `headings`: `PropHeadings` has been removed completely, headings are now automatically and **ALWAYS** removed
 - **❌ breaking**: property `renderer`: `PropRenderer` has been removed completely, only text is rendered with HTML entities support **ALWAYS** enabled
@@ -16,6 +18,8 @@
 <br>
 
 ## v2.1.0
+
+<p align="right"><em>12-Sep-2023</em></p>
 
 - **🪅 feat**: upgrade and test with `Astro` **`v3`**
 - **💻 dev**: `<PostExcerpt />` now comes with its own custom-built test suite and runner! (naive implementation 😳)
