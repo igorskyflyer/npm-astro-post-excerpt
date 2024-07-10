@@ -1,205 +1,97 @@
 ---
-import { stripHeadings, stripHeadingsCode } from '@igor.dvlpr/strip-headings'
-import { stripHtmlCode } from '@igor.dvlpr/strip-html'
-import { stripHeadings as stripHtmlHeadings, stripHeadingsCode as stripHtmlHeadingsCode } from '@igor.dvlpr/strip-html-headings'
+// Author: Igor Dimitrijević (@igorskyflyer)
 
-type AstroMarkdownFile = {
-	rawContent: Function
-	compiledContent: Function
-	[key: string]: any
-}
-type AstroCollectionEntry = {
-	body: string
-	[key: string]: any
-}
-
-export enum PropHeadings {
-	/** Leave the headings intact. */
-	Intact,
-	/** Remove Markdown code but keep the headings text. */
-	TextOnly,
-	/** Remove the headings completely. */
-	None,
-}
-
-export enum PropRenderer {
-	/** Render post excerpts as simple text, no HTML entities supported. */
-	Text,
-	/** Render post excerpts as HTML, HTML entities supported. */
-	Html,
-	/** Render post excerpts as simple text but allow HTML entities as well. */
-	Hybrid,
-}
-
-export interface Props {
-	/**
-	 * The post whose excerpt you want to generate and render. If this prop is not supplied or not valid, the component will throw an error.
-	 */
-	post: AstroMarkdownFile | AstroCollectionEntry
-	/**
-	 * The number of words the generated excerpt should have in total. Be aware that the prop `maxLength` has precedence over this prop but you can use both props simultaneously. Defaults to **40**.
-	 */
-	words?: number
-	/**
-	 * Max length of the generated excerpt. Be aware that this prop has precedence over the `words` prop but you can use both props simultaneously. Defaults to **0** (unlimited).
-	 */
-	maxLength?: number
-	/**
-	 * Controls whether an ellipsis ("…" is the default, you can configure it) should be appended to the post excerpt. Defaults to **true**.
-	 */
-	addEllipsis?: boolean
-	/**
-	 * Controls whether the appended ellipsis should be aware of how the excerpt ends, i.e. if the excerpt ends with a punctuation symbol the ellipsis won't be appended. Defaults to **true**.
-	 */
-	smartEllipsis?: boolean
-	/**
-	 * Controls the ellipsis string that should be appended to the post excerpt. Defaults to **"…"**.
-	 */
-	ellipsis?: string
-	/**
-	 * Controls whether the leading post headings should be stripped or preserved. Defaults to "**PropHeadings.Intact**".
-	 *
-	 * - `Intact` - leave the headings intact,
-	 * - `TextOnly` - remove Markdown code but keep the headings text,
-	 * - `None` - remove the headings completely.
-	 */
-	headings?: PropHeadings
-	/** Controls the rendering of the post excerpt.  Defaults to "**PropRenderer.Text**"
-	 *
-	 * - `Text` - render post excerpts as simple text, no HTML entities supported,
-	 * - `Html` - render post excerpts as HTML, HTML entities supported,
-	 * - `Hybrid` - render post excerpts as simple text but allow HTML entities as well.
-	 */
-	renderer?: PropRenderer
-}
-
-function isPriorV2(post: any): boolean {
-	return typeof post['compiledContent'] === 'function' && typeof post['rawContent'] === 'function'
-}
-
-function isV2(post: any): boolean {
-	return typeof post['body'] === 'string'
-}
+import { stripFile } from '@igor.dvlpr/strip-yaml-front-matter'
+import type { Props } from './src/Props.mjs'
+import { getPlainText, isMdx, isPriorV2, isV2 } from './src/utils.mjs'
+export type { Props }
 
 const symbolEllipsis: string = '…'
 const punctuationSymbols: string[] = ['.', ',', '?', '!', ';', symbolEllipsis]
 
 let {
-	post,
-	words = 40,
-	maxLength = 0,
-	addEllipsis = true,
-	smartEllipsis = true,
-	ellipsis = symbolEllipsis,
-	headings = PropHeadings.Intact,
-	renderer = PropRenderer.Text,
+  post,
+  words = 40,
+  maxLength = 0,
+  addEllipsis = true,
+  smartEllipsis = true,
+  ellipsis = symbolEllipsis
 } = Astro.props as Props
 let postExcerpt: string = ''
 
-if (!post || (!isPriorV2(post) && !isV2(post))) {
-	throw new TypeError('The required prop post is not valid, aborting now.')
+if (!post || (!isPriorV2(post) && !isV2(post) && !isMdx(post))) {
+  throw new TypeError(
+    `The required prop post is not valid, aborting now.\n Got: ${post}`
+  )
 }
 
 if (typeof words !== 'number' || words < 0) {
-	words = 40
-	console.warn('The optional prop words is not valid, defaulting to 40.')
+  words = 40
+  console.warn('The optional prop words is not valid, defaulting to 40.')
 }
 
 if (typeof maxLength !== 'number' || maxLength < 0) {
-	maxLength = 0
-	console.warn('The optional prop maxLength is not valid, defaulting to 0.')
+  maxLength = 0
+  console.warn('The optional prop maxLength is not valid, defaulting to 0.')
 }
 
 if (typeof addEllipsis !== 'boolean') {
-	addEllipsis = true
-	console.warn('The optional prop addEllipsis is not valid, defaulting to true.')
+  addEllipsis = true
+  console.warn(
+    'The optional prop addEllipsis is not valid, defaulting to true.'
+  )
 }
 
 if (typeof smartEllipsis !== 'boolean') {
-	smartEllipsis = true
-	console.warn('The optional prop smartEllipsis is not valid, defaulting to true.')
+  smartEllipsis = true
+  console.warn(
+    'The optional prop smartEllipsis is not valid, defaulting to true.'
+  )
 }
 
 if (typeof ellipsis !== 'string' || ellipsis.length < 1) {
-	ellipsis = symbolEllipsis
-	console.warn('The optional prop ellipsis is not valid, defaulting to "…".')
-}
-
-if (typeof headings !== 'number' || !PropHeadings[headings]) {
-	headings = PropHeadings.Intact
-	console.warn('The optional prop headings is not valid, defaulting to "PropHeadings.Intact".')
-}
-
-if (typeof renderer !== 'number' || !PropRenderer[renderer]) {
-	renderer = PropRenderer.Text
-	console.warn('The optional prop renderer is not valid, defaulting to "PropRenderer.Text".')
+  ellipsis = symbolEllipsis
+  console.warn('The optional prop ellipsis is not valid, defaulting to "…".')
 }
 
 if (isV2(post)) {
-	// Astro >= v2 detected
-	postExcerpt = post['body']
+  // Astro >= v2 detected
+  postExcerpt = post['body']
 } else if (isPriorV2(post)) {
-	// Astro < v2 detected
-	post = post as AstroMarkdownFile
-
-	if (renderer === PropRenderer.Text) {
-		postExcerpt = post.rawContent()
-	} else {
-		postExcerpt = post.compiledContent()
-	}
-}
-
-if (isPriorV2(post)) {
-	if (renderer === PropRenderer.Text) {
-		if (headings === PropHeadings.None) {
-			postExcerpt = stripHeadings(postExcerpt)
-		} else if (headings === PropHeadings.TextOnly) {
-			postExcerpt = stripHeadingsCode(postExcerpt)
-		}
-	} else {
-		if (headings === PropHeadings.None) {
-			postExcerpt = stripHtmlHeadings(postExcerpt)
-		} else if (headings === PropHeadings.TextOnly) {
-			postExcerpt = stripHtmlHeadingsCode(postExcerpt)
-		}
-	}
-	if (renderer === PropRenderer.Hybrid) {
-		postExcerpt = stripHtmlCode(postExcerpt)
-	}
-} else {
-	if (headings === PropHeadings.None) {
-		postExcerpt = stripHeadings(postExcerpt)
-	} else if (headings === PropHeadings.TextOnly) {
-		postExcerpt = stripHeadingsCode(postExcerpt)
-	}
+  // Astro < v2 detected
+  postExcerpt = post.rawContent()
+} else if (isMdx(post)) {
+  // MDX file detected
+  // cannot be used directly from Astro 😔
+  postExcerpt = stripFile(post.file)
 }
 
 postExcerpt = postExcerpt.trim()
+postExcerpt = getPlainText(postExcerpt)
 
 if (words > 0) {
-	postExcerpt = postExcerpt.split(' ').slice(0, words).join(' ')
+  postExcerpt = postExcerpt.split(' ').slice(0, words).join(' ')
 }
 
 if (maxLength > 0) {
-	postExcerpt = postExcerpt.substring(0, maxLength)
+  postExcerpt = postExcerpt.substring(0, maxLength)
 }
 
 if (addEllipsis) {
-	const postLength: number = postExcerpt.length
+  const postLength: number = postExcerpt.length
 
-	if (postLength > 0) {
-		if (smartEllipsis) {
-			const lastChar: string | undefined = postExcerpt.at(-1)
+  if (postLength > 0) {
+    if (smartEllipsis) {
+      const lastChar: string | undefined = postExcerpt.at(-1)
 
-			if (lastChar && !punctuationSymbols.includes(lastChar)) {
-				postExcerpt += ellipsis
-			}
-		} else {
-			postExcerpt += ellipsis
-		}
-	}
+      if (lastChar && !punctuationSymbols.includes(lastChar)) {
+        postExcerpt += ellipsis
+      }
+    } else {
+      postExcerpt += ellipsis
+    }
+  }
 }
 ---
 
-{(renderer === PropRenderer.Html || renderer === PropRenderer.Hybrid) && <Fragment set:html={postExcerpt} />}
-{renderer === PropRenderer.Text && <Fragment set:text={postExcerpt} />}
+<Fragment set:html={postExcerpt} />
