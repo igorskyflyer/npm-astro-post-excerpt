@@ -8,8 +8,6 @@ tag: js,javascript,html,tutorial
 
 Zeus&copy; allows you to create HTML elements and set their attributes in a completely different manner &ndash; all at once! Zeus allows you to create HTML elements and set their attributes in a completely different manner &ndash; all at once!
 
-<br>
-
 ## Usage
 
 First, get `⚡ Zeus 🦅` by doing any of the following:
@@ -17,8 +15,6 @@ First, get `⚡ Zeus 🦅` by doing any of the following:
 - download the source code from [zeus.js](https://raw.githubusercontent.com/igorskyflyer/js-zeus/main/src/zeus.js),
 - download the minified source code from [zeus.min.js](https://raw.githubusercontent.com/igorskyflyer/js-zeus/main/dist/zeus.min.js),
 - download the release package from [zeus](https://github.com/igorskyflyer/js-zeus/releases/tag/v1.0.0) which contains both the original and minified source code &ndash; use only one of two `.js` files.
-
-<br>
 
 Next, import it into your project, e.g.
 
@@ -54,7 +50,7 @@ span.innerHTML = 'Hello world'
 const span = zeus('span', {
   id: 'my-new-span',
   className: 'test',
-  innerHTML: 'Hello world',
+  innerHTML: 'Hello world'
 })
 
 // returns <span id="my-new-span" class="test">Hello world</span>
