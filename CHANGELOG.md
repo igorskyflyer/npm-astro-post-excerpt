@@ -4,6 +4,16 @@
 
 <br>
 
+## v3.0.4
+
+<p align="right"><em>11-Jul-2024</em></p>
+
+- **✅ fix**: fix missing whitespace when extracting plain text
+- **📜 docs**: unify changelog entries
+
+<br>
+<br>
+
 ## v3.0.3
 
 <p align="right"><em>10-Jul-2024</em></p>
