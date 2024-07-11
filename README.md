@@ -77,7 +77,7 @@ const { post } = Astro.props
 { /* other markup */ }
   <p class="post-excerpt">
     <PostExcerpt
-    post={post}
+      post={post}
       words={20}
       addEllipsis={false} />
   </p>
