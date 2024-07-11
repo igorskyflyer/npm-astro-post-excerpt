@@ -7,9 +7,9 @@
 <br>
 
 <p align="center">
-	⭐ An Astro component that renders post excerpts for your Astro blog - directly from your Markdown and MDX files. Astro v2+ collections are supported as well! 💎
-	<br>
-	<strong>Works with all 4 major versions of Astro and MDX!</strong>
+  ⭐ An Astro component that renders post excerpts for your Astro blog - directly from your Markdown and MDX files. Astro v2+ collections are supported as well! 💎
+  <br>
+  <strong>Works with all 4 major versions of Astro and MDX!</strong>
 </p>
 
 <br>
@@ -22,24 +22,24 @@ Now featured on Astro's official <a href="https://astro.build/integrations?searc
 <br>
 
 <div align="center">
-	<blockquote>
-		<br>
-		<h4>💖 Support further development</h4>
-		<span>I work hard for every project, including this one and your support means a lot to me!
-		<br>
-		Consider buying me a coffee. ☕
-		<br>
-		<strong>Thank you for supporting my efforts! 🙏😊</strong></span>
-		<br>
-		<br>
-		<a href="https://ko-fi.com/igorskyflyer" target="_blank"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/ko-fi.png" alt="Donate to igorskyflyer" width="150"></a>
-		<br>
-		<br>
-		<a href="https://github.com/igorskyflyer"><em>@igorskyflyer</em></a>
-		<br>
-		<br>
-		<br>
-	</blockquote>
+  <blockquote>
+    <br>
+    <h4>💖 Support further development</h4>
+    <span>I work hard for every project, including this one and your support means a lot to me!
+    <br>
+    Consider buying me a coffee. ☕
+    <br>
+    <strong>Thank you for supporting my efforts! 🙏😊</strong></span>
+    <br>
+    <br>
+    <a href="https://ko-fi.com/igorskyflyer" target="_blank"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/ko-fi.png" alt="Donate to igorskyflyer" width="150"></a>
+    <br>
+    <br>
+    <a href="https://github.com/igorskyflyer"><em>@igorskyflyer</em></a>
+    <br>
+    <br>
+    <br>
+  </blockquote>
 </div>
 
 <br>
@@ -77,9 +77,9 @@ const { post } = Astro.props
 { /* other markup */ }
   <p class="post-excerpt">
     <PostExcerpt
-			post={post}
-			words={20}
-			addEllipsis={false} />
+    post={post}
+      words={20}
+      addEllipsis={false} />
   </p>
 { /* other markup */ }
 </article>
