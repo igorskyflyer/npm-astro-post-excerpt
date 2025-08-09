@@ -1,18 +1,30 @@
 // @vitest-environment happy-dom
 import { renderAstroComponent } from '@igor.dvlpr/astro-render-component'
+import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import PostExcerpt from '../PostExcerpt.astro'
 import type { IAstroMarkdownFile } from '../src/interfaces/IAstroMarkdownFile'
-import type { IAstroMarkdownXFile } from '../src/interfaces/IAstroMarkdownXFile'
 import type { Props } from '../src/Props'
 
-describe('PostExcerpt', async () => {
-  const mdPost: IAstroMarkdownFile = {
-    body: '# Title\n\nHello **world**, this is a markdown post.',
-    rawContent: () => null,
-    compiledContent: () => null,
-  }
+function readFile(path: string): string {
+  return readFileSync(path, { encoding: 'utf-8' })
+}
 
+const mdFile: string = readFile('./test/mock/sample.md')
+const mdPost: IAstroMarkdownFile = {
+  body: mdFile,
+  rawContent: () => null,
+  compiledContent: () => null,
+}
+
+const mdxFile: string = readFile('./test/mock/sample.mdx')
+const mdxPost: IAstroMarkdownFile = {
+  body: mdxFile,
+  rawContent: () => null,
+  compiledContent: () => null,
+}
+
+describe('PostExcerpt -> Markdown', async () => {
   it('extracts first 4 words with ellipsis', async () => {
     const props: Props = { post: mdPost, words: 4, addEllipsis: true }
     const result = await renderAstroComponent(PostExcerpt, { props })
@@ -26,6 +38,7 @@ describe('PostExcerpt', async () => {
       words: 50,
       maxLength: 10,
       addEllipsis: true,
+      smartEllipsis: false,
     }
     const result = await renderAstroComponent(PostExcerpt, { props })
 
@@ -37,17 +50,35 @@ describe('PostExcerpt', async () => {
   })
 })
 
-describe('generateExcerpt (MDX)', () => {
-  const mdxSource = './test/mock/test.mdx'
-  const mdxPost: IAstroMarkdownXFile = {
-    file: mdxSource,
-    Content: () => null,
-  }
-
-  it('strips front-matter and markdown syntax', async () => {
-    const props: Props = { post: mdxPost, words: 3, addEllipsis: true }
+describe('PostExcerpt -> MDX', () => {
+  it('strips MDX syntax (no ellipsis)', async () => {
+    const props: Props = { post: mdxPost, words: 3, addEllipsis: false }
     const result = await renderAstroComponent(PostExcerpt, { props })
 
-    expect(result.textContent).toBe('This is the…')
+    expect(result.textContent).toBe('Lorem ipsum dolor')
+  })
+
+  it('strips MDX syntax (with ellipsis)', async () => {
+    const props: Props = {
+      post: mdxPost,
+      words: 4,
+      addEllipsis: true,
+    }
+    const result = await renderAstroComponent(PostExcerpt, { props })
+
+    expect(result.textContent).toBe('Lorem ipsum dolor sit…')
+  })
+
+  it('strips MDX syntax (with custom ellipsis)', async () => {
+    const props: Props = {
+      post: mdxPost,
+      words: 4,
+      addEllipsis: true,
+      smartEllipsis: true,
+      ellipsis: '!',
+    }
+    const result = await renderAstroComponent(PostExcerpt, { props })
+
+    expect(result.textContent).toBe('Lorem ipsum dolor sit!')
   })
 })
