@@ -1,95 +1,12 @@
 ---
 // Author: Igor Dimitrijević (@igorskyflyer)
 
-import { stripFile } from '@igor.dvlpr/strip-yaml-front-matter'
-import type { Props } from './dist/Props.mjs'
-import { getPlainText, isMdx, isPriorV2, isV2 } from './dist/utils.mjs'
+import type { Props } from './src/Props'
+import { generateExcerpt } from './src/utils'
+
 export type { Props }
 
-const symbolEllipsis: string = '…'
-const punctuationSymbols: string[] = ['.', ',', '?', '!', ';', symbolEllipsis]
-
-let {
-  post,
-  words = 40,
-  maxLength = 0,
-  addEllipsis = true,
-  smartEllipsis = true,
-  ellipsis = symbolEllipsis
-} = Astro.props as Props
-let postExcerpt: string = ''
-
-if (!post || (!isPriorV2(post) && !isV2(post) && !isMdx(post))) {
-  throw new TypeError('The required prop post is not valid, aborting now.')
-}
-
-if (typeof words !== 'number' || words < 0) {
-  words = 40
-  console.warn('The optional prop words is not valid, defaulting to 40.')
-}
-
-if (typeof maxLength !== 'number' || maxLength < 0) {
-  maxLength = 0
-  console.warn('The optional prop maxLength is not valid, defaulting to 0.')
-}
-
-if (typeof addEllipsis !== 'boolean') {
-  addEllipsis = true
-  console.warn(
-    'The optional prop addEllipsis is not valid, defaulting to true.'
-  )
-}
-
-if (typeof smartEllipsis !== 'boolean') {
-  smartEllipsis = true
-  console.warn(
-    'The optional prop smartEllipsis is not valid, defaulting to true.'
-  )
-}
-
-if (typeof ellipsis !== 'string' || ellipsis.length < 1) {
-  ellipsis = symbolEllipsis
-  console.warn('The optional prop ellipsis is not valid, defaulting to "…".')
-}
-
-if (isV2(post)) {
-  // Astro >= v2 detected
-  postExcerpt = post['body']
-} else if (isPriorV2(post)) {
-  // Astro < v2 detected
-  postExcerpt = post.rawContent()
-} else if (isMdx(post)) {
-  // MDX file detected
-  // cannot be used directly from Astro 😔
-  postExcerpt = stripFile(post.file)
-}
-
-postExcerpt = postExcerpt.trim()
-postExcerpt = getPlainText(postExcerpt)
-
-if (words > 0) {
-  postExcerpt = postExcerpt.split(' ').slice(0, words).join(' ')
-}
-
-if (maxLength > 0) {
-  postExcerpt = postExcerpt.substring(0, maxLength)
-}
-
-if (addEllipsis) {
-  const postLength: number = postExcerpt.length
-
-  if (postLength > 0) {
-    if (smartEllipsis) {
-      const lastChar: string | undefined = postExcerpt.at(-1)
-
-      if (lastChar && !punctuationSymbols.includes(lastChar)) {
-        postExcerpt += ellipsis
-      }
-    } else {
-      postExcerpt += ellipsis
-    }
-  }
-}
+const excerpt: string = generateExcerpt(Astro.props)
 ---
 
-<Fragment set:html={postExcerpt} />
+<Fragment set:html={excerpt} />
