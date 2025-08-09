@@ -14,8 +14,8 @@
   "main": "index.ts",
   "module": "index.ts",
   "scripts": {
-    "pub": "npm publish --access public",
-    "test": "vitest"
+    "test": "vitest",
+    "pub": "npm test && npm publish --access public"
   },
   "keywords": [
     "astro-component",
