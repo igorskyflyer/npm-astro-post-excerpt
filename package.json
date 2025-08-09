@@ -34,7 +34,7 @@
     "igor.dvlpr"
   ],
   "license": "MIT",
-  "author": "Igor Dimitrijević <igor.dvlpr@gmail.com> (https://github.com/igorskyflyer)",
+  "author": "Igor Dimitrijević <admin@igorskyflyer.me> (https://github.com/igorskyflyer)",
   "funding": "https://ko-fi.com/igorskyflyer",
   "homepage": "https://github.com/igorskyflyer/npm-astro-post-excerpt",
   "repository": {
@@ -46,14 +46,13 @@
   },
   "dependencies": {
     "@igor.dvlpr/strip-yaml-front-matter": "^1.0.0",
-    "mdast-util-from-markdown": "^2.0.1",
+    "mdast-util-from-markdown": "^2.0.2",
     "mdast-util-mdx": "^3.0.0",
     "micromark-extension-mdxjs": "^3.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.1.4",
     "@igor.dvlpr/astro-render-component": "^1.0.1",
-    "@types/node": "^22.16.2",
+    "@types/node": "^22.17.1",
     "astro": "^5.12.9",
     "happy-dom": "^18.0.1",
     "prettier": "3.6.2",
@@ -61,6 +60,6 @@
     "vitest": "^3.2.4"
   },
   "peerDependencies": {
-    "astro": "^4.0.0 || ^5.12.9"
+    "astro": "^5.0.0"
   }
 }
