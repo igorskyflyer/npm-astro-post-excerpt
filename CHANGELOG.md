@@ -6,7 +6,7 @@
 
 <br>
 
-## v4.0.0-alpha.2
+## v4.0.0-beta.0
 
 <p align="right"><em>09-Aug-2025</em></p>
 
