@@ -6,9 +6,9 @@
 
 <br>
 
-## v4.0.0-beta.0
+## v4.0.0
 
-<p align="right"><em>09-Aug-2025</em></p>
+<p align="right"><em>10-Aug-2025</em></p>
 
 - **❌ breaking**: drop support for Astro `<5` (MD and MDX parsing is fixed in Astro v5+)
 - **❌ breaking**: drop support for Glob files, use Collections instead
