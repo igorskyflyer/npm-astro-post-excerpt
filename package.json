@@ -1,6 +1,6 @@
 {
   "name": "@igor.dvlpr/astro-post-excerpt",
-  "version": "4.0.0-alpha.1",
+  "version": "4.0.0-alpha.2",
   "description": "⭐ An Astro component that renders post excerpts for your Astro blog - directly from your Markdown and MDX files. Astro v2+ collections are supported as well! 💎",
   "type": "module",
   "engines": {
@@ -12,8 +12,9 @@
   ],
   "main": "./PostExcerpt.astro",
   "module": "./PostExcerpt.astro",
-  "exports": {
-    ".": "./PostExcerpt.astro"
+  ".": {
+    "astro": "./PostExcerpt.astro",
+    "default": "./PostExcerpt.astro"
   },
   "scripts": {
     "test": "vitest",
