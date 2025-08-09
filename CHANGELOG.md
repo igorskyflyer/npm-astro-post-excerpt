@@ -4,6 +4,18 @@
 
 <br>
 
+<br>
+
+## v4.0.0
+
+<p align="right"><em>09-Aug-2025</em></p>
+
+- **❌ breaking**: drop support for Astro `<5` (MD and MDX parsing is improved in Astro v5+)
+
+- **✅ fix**: fix custom ellipsis not being applied
+
+<br>
+
 ## v3.0.4
 
 <p align="right"><em>11-Jul-2024</em></p>
