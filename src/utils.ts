@@ -1,4 +1,4 @@
-import { stripFile } from '@igor.dvlpr/strip-yaml-front-matter'
+import { stripString } from '@igor.dvlpr/strip-yaml-front-matter'
 import type { Root, RootContent } from 'mdast'
 import { fromMarkdown } from 'mdast-util-from-markdown'
 import { mdxFromMarkdown } from 'mdast-util-mdx'
@@ -7,10 +7,6 @@ import { Props } from './Props'
 
 export function isPost(post: any): boolean {
   return typeof post['body'] === 'string'
-}
-
-export function isMdx(post: any): boolean {
-  return typeof post['Content'] === 'function'
 }
 
 function restoreWhitespace(current: string, previous: string): string {
@@ -78,10 +74,10 @@ export function generateExcerpt(props: Props): string {
     addEllipsis: props.addEllipsis !== undefined ? props.addEllipsis : true,
     smartEllipsis:
       props.smartEllipsis !== undefined ? props.smartEllipsis : true,
-    ellipsis: '…',
+    ellipsis: props.ellipsis !== undefined ? props.ellipsis : '…',
   }
 
-  if (!props.post || (!isPost(props.post) && !isMdx(props.post))) {
+  if (!props.post || !isPost(props.post)) {
     throw new TypeError('The required prop post is not valid, aborting now.')
   }
 
@@ -119,17 +115,9 @@ export function generateExcerpt(props: Props): string {
 
   let postExcerpt: string = ''
 
-  if (isPost(props.post)) {
-    // Astro post detected
-    postExcerpt = props.post['body']
-  } else if (isMdx(props.post)) {
-    // MDX file detected
-    // cannot be used directly from Astro 😔
-    postExcerpt = stripFile(props.post.file)
-  }
-
-  postExcerpt = postExcerpt.trim()
+  postExcerpt = stripString(props.post['body'])
   postExcerpt = getPlainText(postExcerpt)
+  postExcerpt = postExcerpt.trim()
 
   if (props.words > 0) {
     postExcerpt = postExcerpt.split(' ').slice(0, props.words).join(' ')
