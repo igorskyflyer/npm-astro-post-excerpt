@@ -1,11 +1,10 @@
 import type { IAstroCollectionEntry } from './interfaces/IAstroCollectionEntry'
-import type { IAstroMarkdownFile } from './interfaces/IAstroMarkdownFile'
 
 export interface Props extends Record<string, unknown> {
   /**
    * The post whose excerpt you want to generate and render. If this prop is not supplied or not valid, the component will throw an error.
    */
-  post: IAstroMarkdownFile | IAstroCollectionEntry
+  post: IAstroCollectionEntry
   /**
    * The number of words the generated excerpt should have in total. Be aware that the prop `maxLength` has precedence over this prop but you can use both props simultaneously. Defaults to **40**.
    */
