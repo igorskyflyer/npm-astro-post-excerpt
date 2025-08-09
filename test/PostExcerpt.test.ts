@@ -3,25 +3,21 @@ import { renderAstroComponent } from '@igor.dvlpr/astro-render-component'
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import PostExcerpt from '../PostExcerpt.astro'
-import type { IAstroMarkdownFile } from '../src/interfaces/IAstroMarkdownFile'
 import type { Props } from '../src/Props'
+import { IAstroCollectionEntry } from '../src/interfaces/IAstroCollectionEntry'
 
 function readFile(path: string): string {
   return readFileSync(path, { encoding: 'utf-8' })
 }
 
 const mdFile: string = readFile('./test/mock/sample.md')
-const mdPost: IAstroMarkdownFile = {
+const mdPost: IAstroCollectionEntry = {
   body: mdFile,
-  rawContent: () => null,
-  compiledContent: () => null,
 }
 
 const mdxFile: string = readFile('./test/mock/sample.mdx')
-const mdxPost: IAstroMarkdownFile = {
+const mdxPost: IAstroCollectionEntry = {
   body: mdxFile,
-  rawContent: () => null,
-  compiledContent: () => null,
 }
 
 describe('PostExcerpt -> Markdown', async () => {
