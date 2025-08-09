@@ -6,11 +6,12 @@
 
 <br>
 
-## v4.0.0
+## v4.0.0-alpha.0
 
 <p align="right"><em>09-Aug-2025</em></p>
 
 - **❌ breaking**: drop support for Astro `<5` (MD and MDX parsing is improved in Astro v5+)
+- **❌ breaking**: drop support for Glob files, use Collections instead
 
 - **✅ fix**: fix custom ellipsis not being applied
 
