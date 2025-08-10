@@ -18,7 +18,7 @@
 <br>
 
 <blockquote align="center">
-	<em>What every blog excerpt wishes it could be.</em>
+	✍🏼<em>What every blog excerpt wishes it could be.</em>✂️
 </blockquote>
 
 <br>
