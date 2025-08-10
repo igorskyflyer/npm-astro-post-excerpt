@@ -67,6 +67,9 @@ export function getPlainText(markdown: string): string {
 }
 
 export function generateExcerpt(props: Props): string {
+  const APE_ELLIPSIS: string = '…'
+  const APE_DEF_WORDS: number = 40
+
   props = {
     post: props.post,
     words: props.words ?? 40,
@@ -82,8 +85,10 @@ export function generateExcerpt(props: Props): string {
   }
 
   if (typeof props.words !== 'number' || props.words < 0) {
-    props.words = 40
-    console.warn('The optional prop words is not valid, defaulting to 40.')
+    props.words = APE_DEF_WORDS
+    console.warn(
+      `The optional prop words is not valid, defaulting to ${APE_DEF_WORDS}.`,
+    )
   }
 
   if (typeof props.maxLength !== 'number' || props.maxLength < 0) {
@@ -105,14 +110,12 @@ export function generateExcerpt(props: Props): string {
     )
   }
 
-  const symbolEllipsis: string = '…'
-  const punctuationSymbols: string[] = ['.', ',', '?', '!', ';', symbolEllipsis]
-
   if (typeof props.ellipsis !== 'string' || props.ellipsis.length < 1) {
-    props.ellipsis = symbolEllipsis
+    props.ellipsis = APE_ELLIPSIS
     console.warn('The optional prop ellipsis is not valid, defaulting to "…".')
   }
 
+  const punctuationSymbols: string[] = ['.', ',', '?', '!', ';', APE_ELLIPSIS]
   let postExcerpt: string = ''
 
   postExcerpt = stripString(props.post['body'])
