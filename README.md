@@ -107,7 +107,7 @@ See [#3820](https://github.com/withastro/astro/issues/3820) for more information
 post: IAstroCollectionEntry
 ```
 
-**required** , represents the post whose excerpt you want to generate and render. You should insert this component inside your posts loop, obtained via: [`getCollection()`](https://docs.astro.build/en/reference/api-reference/#getcollection).
+**required** , represents the post whose excerpt you want to generate and render. You should insert this component inside your posts loop, obtained via: [`getCollection()`](https://docs.astro.build/en/reference/modules/astro-content/#getcollection).
 
 If this prop is not supplied or not valid, the component will throw a `fatal` error.
 
