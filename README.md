@@ -7,6 +7,8 @@
 
 <div align="center">
   ⭐ An Astro component that renders post excerpts for your Astro blog - directly from your Markdown and MDX files using Astro collections! 💎
+  <br>
+  <strong>Requires</strong> Astro <code>v5+</code>.
 </div>
 
 <br>
