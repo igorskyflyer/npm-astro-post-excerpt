@@ -12,6 +12,8 @@
 - **❌ breaking**: drop support for Glob files, use Collections instead
 - **❌ breaking**: fix importing
 
+<br>
+
 - **✅ fix**: fix custom ellipsis not being applied
 
 <br>
