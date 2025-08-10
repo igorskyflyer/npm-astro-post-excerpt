@@ -22,7 +22,6 @@
 </blockquote>
 
 <br>
-<br>
 
 ## 📃 Table of Contents
 
