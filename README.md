@@ -43,6 +43,12 @@ Now featured in Astro's official <a href="https://astro.build/integrations?searc
 - 🧩 No client-side HTML - output only string
 - 🧪 Warns on invalid input + has fallbacks
 
+<br>
+
+<blockquote align="center">
+	<em>What every blog excerpt wishes it could be.</em>
+</blockquote>
+
 ---
 
 ## 🕵🏼 Usage
