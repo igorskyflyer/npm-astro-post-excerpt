@@ -4,8 +4,6 @@
 
 <br>
 
-<br>
-
 ## v4.0.0
 
 <p align="right"><em>10-Aug-2025</em></p>
