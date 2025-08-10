@@ -42,8 +42,6 @@ Now featured in Astro's official <a href="https://astro.build/integrations?searc
 - 🚫 No client-side JS
 - 🧪 Warns on invalid input + has fallbacks
 
-<br>
-
 ---
 
 ## 🕵🏼 Usage
