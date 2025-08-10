@@ -77,4 +77,18 @@ describe('PostExcerpt -> MDX', () => {
 
     expect(result.textContent).toBe('Lorem ipsum dolor sit!')
   })
+
+  it('defaults to 40 words', async () => {
+    const props: Props = {
+      post: mdxPost,
+      words: -128,
+      addEllipsis: true,
+      smartEllipsis: false,
+    }
+    const result = await renderAstroComponent(PostExcerpt, { props })
+
+    expect(result.textContent).toBe(
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin enim tellus, id sollicitudin nibh viverra iaculis. Phasellus ligula tellus, efficitur at ligula sed, semper aliquet risus. In dictum lectus a dui laoreet vulputate. Vestibulum at ullamcorper quam. Praesent mollis…',
+    )
+  })
 })
