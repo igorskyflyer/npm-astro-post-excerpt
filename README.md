@@ -36,10 +36,11 @@ Now featured in Astro's official <a href="https://astro.build/integrations?searc
 - 📜 Parses Markdown/MDX safely
 - 🧹 Strips YAML front matter
 - 💬 Preserves whitespace
-- ✂️ Trims by word or length
+- ✂️ Trims by word and/or length
 - 🤖 Adds ellipsis smartly
 - 🔧 Configurable props
 - 🚫 No client-side JS
+- 🧩 No client-side HTML - output only string
 - 🧪 Warns on invalid input + has fallbacks
 
 ---
