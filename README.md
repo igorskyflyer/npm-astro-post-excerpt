@@ -11,8 +11,14 @@
 
 <br>
 
+<p align="center">
+	Now featured in Astro's official <a href="https://astro.build/integrations?search=igor.dvlpr" target="_blank">Integrations library</a>. 😍
+</p>
+
+<br>
+
 <blockquote align="center">
-Now featured in Astro's official <a href="https://astro.build/integrations?search=igor.dvlpr" target="_blank">Integrations library</a>. 😍
+	<em>What every blog excerpt wishes it could be.</em>
 </blockquote>
 
 <br>
@@ -42,12 +48,6 @@ Now featured in Astro's official <a href="https://astro.build/integrations?searc
 - 🚫 No client-side JS
 - 🧩 No client-side HTML - output only string
 - 🧪 Warns on invalid input + has fallbacks
-
-<br>
-
-<blockquote align="center">
-	<em>What every blog excerpt wishes it could be.</em>
-</blockquote>
 
 ---
 
