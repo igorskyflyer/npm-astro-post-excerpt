@@ -17,7 +17,7 @@
     "default": "./PostExcerpt.astro"
   },
   "scripts": {
-    "test": "vitest",
+    "test": "vitest run",
     "pub": "npm test && npm publish --access public"
   },
   "keywords": [
