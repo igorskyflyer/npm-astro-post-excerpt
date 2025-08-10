@@ -1,16 +1,13 @@
-<p align="center">
-  <img src="https://github.com/igorskyflyer/npm-astro-post-excerpt/raw/main/assets/post-excerpt-for-astro.png" alt="Logo of Post excerpt for Astro component">
-</p>
-
+<div align="center">
+  <img src="https://github.com/igorskyflyer/npm-astro-post-excerpt/raw/main/assets/post-excerpt-for-astro.png" alt="Icon of Post Excerpt component for 🚀 Astro" width="256" height="256">
 <h1 align="center">Post Excerpt component for 🚀 Astro</h1>
+</div>
 
 <br>
 
-<p align="center">
-  ⭐ An Astro component that renders post excerpts for your Astro blog - directly from your Markdown and MDX files. Astro v2+ collections are supported as well! 💎
-  <br>
-  <strong>Works with all 4 major versions of Astro and MDX!</strong>
-</p>
+<div align="center">
+  ⭐ An Astro component that renders post excerpts for your Astro blog - directly from your Markdown and MDX files using Astro collections! 💎
+</div>
 
 <br>
 
@@ -21,32 +18,35 @@ Now featured on Astro's official <a href="https://astro.build/integrations?searc
 <br>
 <br>
 
-<div align="center">
-  <blockquote>
-    <br>
-    <h4>💖 Support further development</h4>
-    <span>I work hard for every project, including this one and your support means a lot to me!
-    <br>
-    Consider buying me a coffee. ☕
-    <br>
-    <strong>Thank you for supporting my efforts! 🙏😊</strong></span>
-    <br>
-    <br>
-    <a href="https://ko-fi.com/igorskyflyer" target="_blank"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/ko-fi.png" alt="Donate to igorskyflyer" width="150"></a>
-    <br>
-    <br>
-    <a href="https://github.com/igorskyflyer"><em>@igorskyflyer</em></a>
-    <br>
-    <br>
-    <br>
-  </blockquote>
-</div>
+## 📃 Table of Contents
+
+- [Features](#-features)
+- [Usage](#-usage)
+- [Changelog](#-changelog)
+- [Support](#-support)
+- [License](#-license)
+- [Related](#-related)
+- [Author](#-author)
+
+---
+
+## 🤖 Features
+
+- 🔌 Plug-and-play with Astro props
+- 📜 Parses Markdown/MDX safely
+- 🧹 Strips YAML front matter
+- 💬 Preserves whitespace
+- ✂️ Trims by word or length
+- 🤖 Adds ellipsis smartly
+- 🔧 Configurable props
+- 🚫 No client-side JS
+- 🧪 Warns on invalid input + has fallbacks
 
 <br>
+
+---
 
 ## 🕵🏼 Usage
-
-<br>
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/igorskyflyer/npm-astro-post-excerpt/main/assets/demo.png" alt="Generated post excerpt">
@@ -92,7 +92,7 @@ const { post } = Astro.props
 ```js
 vite: {
     ssr: {
-      noExternal: ['astro', '@igor.dvlpr/astro-post-excerpt'],
+      noExternal: ['@igor.dvlpr/astro-post-excerpt'],
     },
   }
 ```
@@ -101,53 +101,17 @@ See [#3820](https://github.com/withastro/astro/issues/3820) for more information
 
 <br>
 
-If you have migrated your Astro site to v2+ you can now use Collections for your posts loop. This component works with both v2+ and versions prior v2.
-
-<br>
-
-If you're upgrading this component while keeping your Astro installation <2, everything should work as expected since the introduced changes are backwards-compatible.
-
-<br>
-
-In case of an issue, submit it on the component's [Issues](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/new) page. You should provide a concise explanation of the issue you're facing and sample code - if applicable.
-
-<br>
-
 ## 🤹🏼‍♂️ Options
 
 ### post
 
 ```ts
-post: IAstroMarkdownFile | IAstroCollectionEntry | GlobFile
+post: IAstroCollectionEntry
 ```
 
-**required** , represents the post whose excerpt you want to generate and render. You should insert this component inside your posts loop:
+**required** , represents the post whose excerpt you want to generate and render. You should insert this component inside your posts loop, obtained via: [`getCollection()`](https://docs.astro.build/en/reference/api-reference/#getcollection).
 
-- for `Astro >=2`, obtained via:
-
-  - [`getCollection()`](https://docs.astro.build/en/reference/api-reference/#getcollection)- for posts loop,
-
-  - [`getEntryBySlug()`](https://docs.astro.build/en/reference/api-reference/#getentrybyslug) - for single posts retrival,
-
-- for `Astro <2`, obtained via [`Astro.glob()`](https://docs.astro.build/en/reference/api-reference/#astroglob).
-
-If this prop is not supplied or not valid, the component will throw an error.
-
-<br>
-
-Interfaces and types
-
-- `IAstroMarkdownFile`,
-- `IAstroCollectionEntry`,
-- `GlobFile`
-
-are artificial and they correspond to
-
-- `MarkdownInstance<Record<string, any>>`,
-- `CollectionEntry<T>`,
-- `Record<string, any>`
-
-respectfully.
+If this prop is not supplied or not valid, the component will throw a `fatal` error.
 
 <br>
 
@@ -222,53 +186,68 @@ ellipsis?: string
 
 If this prop is not valid, a warning will be output to the console.
 
-<br>
-
 ---
 
 ## 📝 Changelog
 
-> ✨ Changelog is available here: [CHANGELOG.md](https://github.com/igorskyflyer/npm-astro-post-excerpt/blob/main/CHANGELOG.md).
+📑 The changelog is available here: [CHANGELOG.md](https://github.com/igorskyflyer/npm-astro-post-excerpt/blob/main/CHANGELOG.md).
 
 ---
 
 ## 🪪 License
 
-Licensed under the MIT license which is available here, [MIT license](https://github.com/igorskyflyer/npm-astro-post-excerpt/blob/main/LICENSE).
+Licensed under the MIT license which is available here, [MIT license](https://github.com/igorskyflyer/npm-astro-post-excerpt/blob/main/LICENSE.txt).
+
+---
+
+## 💖 Support
+
+<div align="center">
+  I work hard for every project, including this one and your support means a lot to me!
+  <br>
+  Consider buying me a coffee. ☕
+  <br>
+  <br>
+  <a href="https://ko-fi.com/igorskyflyer" target="_blank"><img src="https://raw.githubusercontent.com/igorskyflyer/igorskyflyer/main/assets/ko-fi.png" alt="Donate to igorskyflyer" width="180" height="46"></a>
+  <br>
+  <br>
+  <em>Thank you for supporting my efforts!</em> 🙏😊
+</div>
 
 ---
 
 ## 🧬 Related
 
+[@igor.dvlpr/rawelement](https://www.npmjs.com/package/@igor.dvlpr/rawelement)
+
+> _🐯 A utility that lets you manipulate HTML elements, their attributes and innerHTML as strings, on the go and then render the modified HTML. Very useful in SSG projects. 💤_
+
+<br>
+
+[@igor.dvlpr/astro-escaped-component](https://www.npmjs.com/package/@igor.dvlpr/astro-escaped-component)
+
+> _🏃🏻‍♂️‍➡️ An Astro component that holds only HTML-encoded content. 📜_
+
+<br>
+
+[@igor.dvlpr/astro-saferesource](https://www.npmjs.com/package/@igor.dvlpr/astro-saferesource)
+
+> _🎐 Adds CSP-compliant inline scripts and styles to Astro! 🎠_
+
+<br>
+
+[@igor.dvlpr/astro-easynav-button](https://www.npmjs.com/package/@igor.dvlpr/astro-easynav-button)
+
+> _🧭 Add an easy-to-use navigational button (jump to top/bottom) to your Astro site. 🔼_
+
+<br>
+
 [@igor.dvlpr/vscode-folderpicker](https://www.npmjs.com/package/@igor.dvlpr/vscode-folderpicker)
 
 > _✨ Provides a custom Folder Picker API + UI for Visual Studio Code. 🎨_
 
-<br>
+---
 
-[@igor.dvlpr/hook](https://www.npmjs.com/package/@igor.dvlpr/hook)
+## 👨🏻‍💻 Author
 
-> _🪝 Hooks onto a JavaScript prototype, either extending or changing its behavior or replacing it completely. 👺_
-
-<br>
-
-[@igor.dvlpr/aria](https://www.npmjs.com/package/@igor.dvlpr/aria)
-
-> _🧬 Meet Aria, an efficient Adblock filter list compiler, with many features that make your maintenance of Adblock filter lists a breeze! 🗡_
-
-<br>
-
-[@igor.dvlpr/scrollend-polyfill](https://www.npmjs.com/package/@igor.dvlpr/scrollend-polyfill)
-
-> _🛴 A performant and light (&lt; 1KB) JavaScript polyfill for the scrollend Event. ⛸️_
-
-<br>
-
-[@igor.dvlpr/valid-path](https://www.npmjs.com/package/@igor.dvlpr/valid-path)
-
-> _🧰 Provides ways of testing whether a given value can be a valid file/directory name. 🏜_
-
-<br>
-<br>
-
-Provided by **Igor Dimitrijević** ([_@igorskyflyer_](https://github.com/igorskyflyer/)).
+Created by **Igor Dimitrijević** ([_@igorskyflyer_](https://github.com/igorskyflyer/)).
