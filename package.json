@@ -1,6 +1,6 @@
 {
   "name": "@igor.dvlpr/astro-post-excerpt",
-  "version": "4.0.0",
+  "version": "4.1.0-alpha.0",
   "description": "⭐ An Astro component that renders post excerpts for your Astro blog - directly from your Markdown and MDX files. Astro v2+ collections are supported as well! 💎",
   "type": "module",
   "engines": {
@@ -57,6 +57,7 @@
     "@igor.dvlpr/astro-render-component": "^1.0.1",
     "@types/node": "^22.17.1",
     "astro": "^5.12.9",
+    "gray-matter": "^4.0.3",
     "happy-dom": "^18.0.1",
     "prettier": "3.6.2",
     "prettier-plugin-astro": "0.14.1",
