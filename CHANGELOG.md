@@ -4,9 +4,11 @@
 
 <br>
 
-## v4.0.0
+## v4.1.0 (_15-Aug-2025_)
 
-<p align="right"><em>10-Aug-2025</em></p>
+<br>
+
+## v4.0.0 (_10-Aug-2025_)
 
 - **❌ breaking**: drop support for Astro `<5` (MD and MDX parsing is fixed in Astro v5+)
 - **❌ breaking**: drop support for Glob files, use Collections instead
@@ -18,9 +20,7 @@
 
 <br>
 
-## v3.0.4
-
-<p align="right"><em>11-Jul-2024</em></p>
+## v3.0.4 (_11-Jul-2024_)
 
 - **✅ fix**: fix missing whitespace when extracting plain text
 - **📜 docs**: unify changelog entries
@@ -28,18 +28,14 @@
 <br>
 <br>
 
-## v3.0.3
-
-<p align="right"><em>10-Jul-2024</em></p>
+## v3.0.3 (_10-Jul-2024_)
 
 - **💻 dev**: conform with installed Astro's Node engine version
 
 <br>
 <br>
 
-## v3.0.2
-
-<p align="right"><em>10-Jul-2024</em></p>
+## v3.0.2 (_10-Jul-2024_)
 
 - **❌ breaking**: property `headings`: `PropHeadings` has been removed completely, headings are now automatically and **ALWAYS** removed
 - **❌ breaking**: property `renderer`: `PropRenderer` has been removed completely, only text is rendered with HTML entities support **ALWAYS** enabled
@@ -53,9 +49,7 @@
 <br>
 <br>
 
-## v2.1.0
-
-<p align="right"><em>12-Sep-2023</em></p>
+## v2.1.0 (_12-Sep-2023_)
 
 - **🪅 feat**: upgrade and test with `Astro` **`v3`**
 - **💻 dev**: `<PostExcerpt />` now comes with its own custom-built test suite and runner! (naive implementation 😳)
@@ -63,18 +57,14 @@
 <br>
 <br>
 
-## v2.0.3
-
-<p align="right"><em>13-Jul-2023</em></p>
+## v2.0.3 (_13-Jul-2023_)
 
 - **💻 dev**: fix vulnerability, upgrade dependencies
 
 <br>
 <br>
 
-## v2.0.2
-
-<p align="right"><em>30-Jun-2023</em></p>
+## v2.0.2 (_30-Jun-2023_)
 
 - **✅ fix**: upgrade dependencies, fixes multiple vulnerabilities
 - **✅ fix**: better handle last character for smartEllipsis
@@ -83,18 +73,14 @@
 <br>
 <br>
 
-## v2.0.1
-
-<p align="right"><em>09-Apr-2023</em></p>
+## v2.0.1 (_09-Apr-2023_)
 
 - **✅ fix**: peer dependency install error ([#32](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/32))
 
 <br>
 <br>
 
-## v2.0.0
-
-<p align="right"><em>09-Apr-2023</em></p>
+## v2.0.0 (_09-Apr-2023_)
 
 - **🪅 feat**: add support for Astro v2 [Collections](https://docs.astro.build/en/guides/content-collections/)
 - **🪅 feat**: make the component backwards-compatible
@@ -131,18 +117,14 @@
 <br>
 <br>
 
-## v1.3.2
-
-<p align="right"><em>06-Apr-2023</em></p>
+## v1.3.2 (_06-Apr-2023_)
 
 - **💻 dev**: improve IntelliSense
 
 <br>
 <br>
 
-## v1.3.1
-
-<p align="right"><em>05-Apr-2023</em></p>
+## v1.3.1 (_05-Apr-2023_)
 
 - **🪅 feat**: add an HTML render ([#18](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/18))
 - **🪅 feat**: add [@igor.dvlpr/strip-html](https://www.npmjs.com/package/@igor.dvlpr/strip-html) which brings:
@@ -159,9 +141,7 @@
 <br>
 <br>
 
-## v1.2.3
-
-<p align="right"><em>29-Mar-2023</em></p>
+## v1.2.3 (_29-Mar-2023_)
 
 - **🪅 feat**: preserve or strip post headings in the rendered excerpt ([#12](https://github.com/igorskyflyer/npm-astro-post-excerpt/issues/12))
   - via [@igor.dvlpr/strip-headings](https://www.npmjs.com/package/@igor.dvlpr/strip-headings)
@@ -173,9 +153,7 @@
 <br>
 <br>
 
-## v1.1.1
-
-<p align="right"><em>16-Dec-2022</em></p>
+## v1.1.1 (_16-Dec-2022_)
 
 - **💻 dev**: upgrade dependencies
 - **📜 docs**: minor README fixes
@@ -183,9 +161,7 @@
 <br>
 <br>
 
-## v1.1.0
-
-<p align="right"><em>02-Dec-2022</em></p>
+## v1.1.0 (_02-Dec-2022_)
 
 - **🪅 feat**: add smartEllipsis
 - **🪅 feat**: add custom ellipsis support
@@ -198,9 +174,7 @@
 <br>
 <br>
 
-## v1.0.3
-
-<p align="right"><em>13-Oct-2022</em></p>
+## v1.0.3 (_13-Oct-2022_)
 
 - **💻 dev**: add testing environment
 - **💻 dev**: maintenance
@@ -208,9 +182,7 @@
 <br>
 <br>
 
-## v1.0.2
-
-<p align="right"><em>12-Sep-2022</em></p>
+## v1.0.2 (_12-Sep-2022_)
 
 - **💻 dev**: throw an error instead of logging it when required prop [`post`](https://github.com/igorskyflyer/npm-astro-post-excerpt#post) is missing or not valid
 - **💻 dev**: security fixes
@@ -218,9 +190,7 @@
 <br>
 <br>
 
-## v1.0.1
-
-<p align="right"><em>12-Sep-2022</em></p>
+## v1.0.1 (_12-Sep-2022_)
 
 - **💻 dev**: security fixes
 - **📜 docs**: add an explanation how to fix a common Astro build error caused by Vite
@@ -228,8 +198,6 @@
 <br>
 <br>
 
-## v1.0.0
-
-<p align="right"><em>11-Sep-2022</em></p>
+## v1.0.0 (_11-Sep-2022_)
 
 - **🚀 launch**: initial release
