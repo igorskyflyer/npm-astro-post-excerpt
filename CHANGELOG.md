@@ -12,7 +12,6 @@
 
 - **❌ breaking**: drop support for Astro `<5` (MD and MDX parsing is fixed in Astro v5+)
 - **❌ breaking**: drop support for Glob files, use Collections instead
-- **❌ breaking**: fix importing
 
 <br>
 
