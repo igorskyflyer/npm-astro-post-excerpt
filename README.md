@@ -35,7 +35,7 @@
 - [Related](#-related)
 - [Author](#-author)
 
----
+<br>
 
 ## 🤖 Features
 
@@ -50,7 +50,7 @@
 - 🧩 No client-side HTML - output only string
 - 🧪 Warns on invalid input + has fallbacks
 
----
+<br>
 
 ## 🕵🏼 Usage
 
@@ -192,19 +192,19 @@ ellipsis?: string
 
 If this prop is not valid, a warning will be output to the console.
 
----
+<br>
 
 ## 📝 Changelog
 
 📑 The changelog is available here: [CHANGELOG.md](https://github.com/igorskyflyer/npm-astro-post-excerpt/blob/main/CHANGELOG.md).
 
----
+<br>
 
 ## 🪪 License
 
 Licensed under the MIT license which is available here, [MIT license](https://github.com/igorskyflyer/npm-astro-post-excerpt/blob/main/LICENSE.txt).
 
----
+<br>
 
 ## 💖 Support
 
@@ -220,7 +220,7 @@ Licensed under the MIT license which is available here, [MIT license](https://gi
   <em>Thank you for supporting my efforts!</em> 🙏😊
 </div>
 
----
+<br>
 
 ## 🧬 Related
 
@@ -252,7 +252,7 @@ Licensed under the MIT license which is available here, [MIT license](https://gi
 
 > _✨ Provides a custom Folder Picker API + UI for Visual Studio Code. 🎨_
 
----
+<br>
 
 ## 👨🏻‍💻 Author
 
