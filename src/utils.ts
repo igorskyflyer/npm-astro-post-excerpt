@@ -1,5 +1,4 @@
-import { stripString } from '@igor.dvlpr/strip-yaml-front-matter'
-import type { Root, RootContent } from 'mdast'
+import { stripString } from '@igorskyflyer/strip-yaml-front-matter'
 import { fromMarkdown } from 'mdast-util-from-markdown'
 import { mdxFromMarkdown } from 'mdast-util-mdx'
 import { mdxjs } from 'micromark-extension-mdxjs'
@@ -21,7 +20,7 @@ function restoreWhitespace(current: string, previous: string): string {
   return `${previous}${current}`
 }
 
-function walk(node: RootContent | any): string | undefined {
+function walk(node: any): string | undefined {
   const allowedNodes: string[] = ['emphasis', 'paragraph', 'strong', 'text']
 
   if (!allowedNodes.includes(node.type)) {
@@ -33,7 +32,7 @@ function walk(node: RootContent | any): string | undefined {
   if (node.value?.length > 0) {
     result += node.value
   } else if (node.children?.length > 0) {
-    node.children.forEach((child: RootContent) => {
+    node.children.forEach((child: any) => {
       if (allowedNodes.includes(child.type)) {
         const value: string | undefined = walk(child)
 
@@ -50,12 +49,12 @@ function walk(node: RootContent | any): string | undefined {
 export function getPlainText(markdown: string): string {
   let result: string = ''
 
-  const tree: Root = fromMarkdown(markdown, {
+  const tree: any = fromMarkdown(markdown, {
     extensions: [mdxjs()],
     mdastExtensions: [mdxFromMarkdown()],
   })
 
-  tree.children.forEach((node: RootContent): void => {
+  tree.children.forEach((node: any): void => {
     const value: string | undefined = walk(node)
 
     if (value) {
