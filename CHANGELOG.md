@@ -4,7 +4,21 @@
 
 <br>
 
-## v4.1.0 (_15-Aug-2025_)
+## v4.1.0 (_14-Mar-2026_)
+
+- ✨ **feat**: add support for Astro v6
+
+### ⚠️ Important notice – End of life under this scope
+
+This is the **last version** that will be published under `@igor.dvlpr/astro-post-excerpt`.
+
+Future updates, bug fixes, and new features will be released under a **new package scope** of [**@igorskyflyer**](https://www.npmjs.com/~igorskyflyer).  
+Please plan to migrate to the new package once released.
+
+**Why?**  
+Technical issues and maintenance reasons (scope consolidation, better discoverability, and alignment with other projects).
+
+Thank you for using this library – your feedback has been invaluable!
 
 <br>
 
