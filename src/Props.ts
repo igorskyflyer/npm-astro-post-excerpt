@@ -25,8 +25,4 @@ export interface Props extends Record<string, unknown> {
    * Controls the ellipsis string that should be appended to the post excerpt. Defaults to **"…"**.
    */
   ellipsis?: string
-  /**
-   * A custom post excerpt to use instead of the auto-generated one.
-   */
-  excerpt?: string
 }
