@@ -1,6 +1,6 @@
 {
   "name": "@igor.dvlpr/astro-post-excerpt",
-  "version": "4.1.0-alpha.0",
+  "version": "4.1.0",
   "description": "⭐ An Astro component that renders post excerpts for your Astro blog - directly from your Markdown and MDX files. Astro v2+ collections are supported as well! 💎",
   "type": "module",
   "engines": {
@@ -48,22 +48,20 @@
     "url": "https://github.com/igorskyflyer/npm-astro-post-excerpt/issues"
   },
   "dependencies": {
-    "@igor.dvlpr/strip-yaml-front-matter": "^1.0.0",
-    "mdast-util-from-markdown": "^2.0.2",
+    "@igorskyflyer/strip-yaml-front-matter": "^1.1.1",
+    "mdast-util-from-markdown": "^2.0.3",
     "mdast-util-mdx": "^3.0.0",
     "micromark-extension-mdxjs": "^3.0.0"
   },
   "devDependencies": {
-    "@igor.dvlpr/astro-render-component": "^1.0.1",
-    "@types/node": "^22.17.1",
-    "astro": "^5.12.9",
-    "gray-matter": "^4.0.3",
-    "happy-dom": "^18.0.1",
-    "prettier": "3.6.2",
+    "@igorskyflyer/astro-render-component": "^2.0.1",
+    "@types/node": "^22.19.15",
+    "astro": "^6.0.4",
+    "prettier": "3.8.1",
     "prettier-plugin-astro": "0.14.1",
-    "vitest": "^3.2.4"
+    "vitest": "^4.1.0"
   },
   "peerDependencies": {
-    "astro": "^5.0.0 || ^6.0.0"
+    "astro": ">=5.0.0"
   }
 }

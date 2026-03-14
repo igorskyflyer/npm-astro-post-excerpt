@@ -1,5 +1,5 @@
-// @vitest-environment happy-dom
-import { renderAstroComponent } from '@igor.dvlpr/astro-render-component'
+// @​vitest-environment node
+import { renderAstroComponent } from '@igorskyflyer/astro-render-component'
 import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import PostExcerpt from '../PostExcerpt.astro'
@@ -25,7 +25,7 @@ describe('PostExcerpt -> Markdown', async () => {
     const props: Props = { post: mdPost, words: 4, addEllipsis: true }
     const result = await renderAstroComponent(PostExcerpt, { props })
 
-    expect(result.textContent).toBe('Hello world, this is…')
+    expect(result).toBe('Hello world, this is…')
   })
 
   it('respects maxLength over words count', async () => {
@@ -38,7 +38,7 @@ describe('PostExcerpt -> Markdown', async () => {
     }
     const result = await renderAstroComponent(PostExcerpt, { props })
 
-    expect(result.textContent).toBe('Hello worl…')
+    expect(result).toBe('Hello worl…')
   })
 
   it('throws if post missing', async () => {
@@ -51,7 +51,7 @@ describe('PostExcerpt -> MDX', () => {
     const props: Props = { post: mdxPost, words: 3, addEllipsis: false }
     const result = await renderAstroComponent(PostExcerpt, { props })
 
-    expect(result.textContent).toBe('Lorem ipsum dolor')
+    expect(result).toBe('Lorem ipsum dolor')
   })
 
   it('strips MDX syntax (with ellipsis)', async () => {
@@ -62,7 +62,7 @@ describe('PostExcerpt -> MDX', () => {
     }
     const result = await renderAstroComponent(PostExcerpt, { props })
 
-    expect(result.textContent).toBe('Lorem ipsum dolor sit…')
+    expect(result).toBe('Lorem ipsum dolor sit…')
   })
 
   it('strips MDX syntax (with custom ellipsis)', async () => {
@@ -75,7 +75,7 @@ describe('PostExcerpt -> MDX', () => {
     }
     const result = await renderAstroComponent(PostExcerpt, { props })
 
-    expect(result.textContent).toBe('Lorem ipsum dolor sit!')
+    expect(result).toBe('Lorem ipsum dolor sit!')
   })
 
   it('defaults to 40 words', async () => {
@@ -87,7 +87,7 @@ describe('PostExcerpt -> MDX', () => {
     }
     const result = await renderAstroComponent(PostExcerpt, { props })
 
-    expect(result.textContent).toBe(
+    expect(result).toBe(
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sollicitudin enim tellus, id sollicitudin nibh viverra iaculis. Phasellus ligula tellus, efficitur at ligula sed, semper aliquet risus. In dictum lectus a dui laoreet vulputate. Vestibulum at ullamcorper quam. Praesent mollis…',
     )
   })
